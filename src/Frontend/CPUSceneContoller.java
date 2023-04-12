@@ -5,9 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 
 public class CPUSceneContoller {
     private Stage stage;
@@ -25,5 +28,10 @@ public class CPUSceneContoller {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void checkDigitsOfPi(ActionEvent event){
+
+        System.out.println("helloooo digits of pi!");
     }
 }

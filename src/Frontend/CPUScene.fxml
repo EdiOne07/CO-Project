@@ -2,9 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.CPUSceneContoller">
    <children>
@@ -13,8 +15,23 @@
             <Image url="@Images/startingSceneBackground.png" />
          </image>
       </ImageView>
-
-      <Label layoutX="258.0" layoutY="152.0" text="Welcome to CPU test!" />
-      <Button layoutX="33.0" layoutY="340.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
+      <Button layoutX="7.0" layoutY="296.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
+      <Label layoutX="37.0" layoutY="359.0" prefHeight="20.0" prefWidth="67.0" rotate="-10.0" text="Go back" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button layoutX="121.0" layoutY="50.0" mnemonicParsing="false" onAction="#checkDigitsOfPi" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+      <Label contentDisplay="TEXT_ONLY" layoutX="172.0" layoutY="79.0" prefHeight="51.0" prefWidth="56.0" text="DIGITS &#10;OF PI" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

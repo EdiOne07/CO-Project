@@ -2,9 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.HDDSceneController">
    <children>
@@ -13,7 +15,23 @@
             <Image url="@Images/startingSceneBackground.png" />
          </image>
       </ImageView>
-      <Label layoutX="240.0" layoutY="145.0" text="Welcome to HDD test!" />
-      <Button layoutX="45.0" layoutY="327.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
+      <Button layoutX="121.0" layoutY="50.0" mnemonicParsing="false" onAction="#someHDDtest" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+      <Label contentDisplay="TEXT_ONLY" layoutX="176.0" layoutY="82.0" prefHeight="46.0" prefWidth="41.0" text="HDD&#10;test" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button layoutX="7.0" layoutY="296.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
+      <Label layoutX="37.0" layoutY="359.0" prefHeight="20.0" prefWidth="67.0" rotate="-10.0" text="Go back" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>
