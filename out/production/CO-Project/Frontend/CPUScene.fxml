@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.CPUSceneContoller">
+   <children>
+      <ImageView fitHeight="414.0" fitWidth="700.0">
+         <image>
+            <Image url="@Images/startingSceneBackground.png" />
+         </image>
+      </ImageView>
+
+      <Label layoutX="258.0" layoutY="152.0" text="Welcome to CPU test!" />
+      <Button layoutX="33.0" layoutY="340.0" mnemonicParsing="false" onAction="#goBack" text="Go Back" />
+   </children>
+</AnchorPane>
