@@ -1,1 +1,2 @@
-Aici se va urca orice nu are legatura cu cod
+How to add scene builder to your project in intellij
+https://youtu.be/9XJicRt_FaI?t=2812
