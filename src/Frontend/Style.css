@@ -3,8 +3,6 @@
     -fx-alignment:center;
 
 }
-
-#layout{
-    -fx-background-color: "blue";
-
+#background1{
+    -fx-background-color: pink;
 }

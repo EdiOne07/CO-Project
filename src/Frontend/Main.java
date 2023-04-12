@@ -17,8 +17,8 @@ public class Main extends Application{
         //here will be the main javafx code
         try {
             window = primaryStage;
-            Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/Main.fxml"));
-            startingScene = new Scene(layout);
+            Parent layout1 = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/Main.fxml"));
+            startingScene = new Scene(layout1);
             //startingScene.getStylesheets().add(getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm());
             String css = this.getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm();
             startingScene.getStylesheets().add(css);
