@@ -5,9 +5,12 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 import java.util.Stack;
 
@@ -24,6 +27,8 @@ public class Main extends Application{
         //here will be the main javafx code
         window = primaryStage;
         primaryStage.setTitle("The Mighty Capybara's Benchmark");
+        Image icon = new Image("Fontend/Images/icon.png");
+        window.getIcons().add(icon);
 
         backButton = new Button();
         backButton.setText("Click to go back to menu!");
