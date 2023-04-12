@@ -3,6 +3,7 @@
     -fx-alignment:center;
 
 }
-#background1{
-    -fx-background-color: pink;
+.button{
+    -fx-background-color: transparent;
+    -fx-graphic: url('Images/smallButton.png');
 }

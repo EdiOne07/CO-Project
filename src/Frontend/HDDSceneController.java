@@ -26,4 +26,8 @@ public class HDDSceneController {
             e.printStackTrace();
         }
     }
+    public void someHDDtest(ActionEvent event){
+
+        System.out.println("hi HDD test!");
+    }
 }
