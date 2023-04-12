@@ -3,6 +3,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application{
@@ -19,6 +20,8 @@ public class Main extends Application{
             window = primaryStage;
             Parent layout1 = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/Main.fxml"));
             startingScene = new Scene(layout1);
+            Image icon = new Image("Frontend/Images/brown.png");
+            window.getIcons().add(icon);
             //startingScene.getStylesheets().add(getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm());
             String css = this.getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm();
             startingScene.getStylesheets().add(css);

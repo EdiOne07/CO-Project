@@ -17,7 +17,7 @@
       </ImageView>
         <Button layoutX="374.0" layoutY="251.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="64.0" prefWidth="77.0" stylesheets="@Style.css" />
         <Button fx:id="CheckCPU" layoutX="222.0" layoutY="171.0" mnemonicParsing="false" onAction="#goToCPUScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
-      <Label layoutX="252.0" layoutY="230.0" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check CPU" textFill="WHITE">
+      <Label layoutX="252.0" layoutY="230.0" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check CPU" textFill="WHITE" mouseTransparent="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
@@ -25,7 +25,7 @@
             <Glow />
          </effect>
       </Label>
-      <Label layoutX="404.0" layoutY="310.0" onMouseClicked="#goToHDDScene" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check HDD" textFill="WHITE">
+      <Label layoutX="404.0" layoutY="310.0" onMouseClicked="#goToHDDScene" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check HDD" textFill="WHITE" mouseTransparent="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
