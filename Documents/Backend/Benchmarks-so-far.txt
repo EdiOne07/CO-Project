@@ -1,0 +1,9 @@
+FOR CPU:
+1.  Matrix multiplication: This algorithm multiplies two large matrices together and can stress the CPU's floating-point arithmetic capabilities. Like the prime number algorithm, this algorithm can be optimized to use multiple threads.
+2.  Compression/decompression: This algorithm compresses and decompresses a large file using a compression algorithm such as LZ4 or GZIP. This can stress both the CPU and memory subsystems and can be used to test the performance of both.
+3.  Monte Carlo simulation: This algorithm uses a probabilistic simulation to estimate the value of a complex mathematical formula. This can stress the CPU's ability to perform complex floating-point calculations.
+The data size for the LARGE version of the benchmark uses a 1,000 x 1,000 matrix.
+FOR HDD:
+We found some libraries that we can use in order to benchmark the memory of the system.
+One of them is JMH (Java  Microbenchmark Harness). We also found Caliper and Apache JMeter.
+We are still debating for which one to use, the winner so far is JMH.
