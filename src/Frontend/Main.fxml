@@ -10,14 +10,15 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.Controller">
     <children>
-      <ImageView fitHeight="383.0" fitWidth="704.0">
+      <ImageView fitHeight="383.0" fitWidth="704.0" layoutX="-3.0">
          <image>
             <Image url="@Images/background.png" />
          </image>
       </ImageView>
-        <Button layoutX="374.0" layoutY="251.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="64.0" prefWidth="77.0" stylesheets="@Style.css" />
-        <Button fx:id="CheckCPU" layoutX="222.0" layoutY="171.0" mnemonicParsing="false" onAction="#goToCPUScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
-      <Label layoutX="252.0" layoutY="230.0" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check CPU" textFill="WHITE" mouseTransparent="true">
+        <Button layoutX="340.0" layoutY="236.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="64.0" prefWidth="77.0" stylesheets="@Style.css" />
+        <Button fx:id="CheckCPU" layoutX="216.0" layoutY="175.0" mnemonicParsing="false" onAction="#goToCPUScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
+      <Button layoutX="486.0" layoutY="280.0" mnemonicParsing="false" onAction="#goToGraph" onMouseClicked="#goToGraph" prefHeight="33.0" prefWidth="153.0" stylesheets="@Style.css" />
+      <Label layoutX="237.0" layoutY="216.0" mouseTransparent="true" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check CPU" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
@@ -25,7 +26,7 @@
             <Glow />
          </effect>
       </Label>
-      <Label layoutX="404.0" layoutY="310.0" onMouseClicked="#goToHDDScene" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check HDD" textFill="WHITE" mouseTransparent="true">
+      <Label layoutX="361.0" layoutY="277.0" mouseTransparent="true" onMouseClicked="#goToHDDScene" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check HDD" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
@@ -33,5 +34,12 @@
             <Glow />
          </effect>
       </Label>
+      <Label fx:id="Graph" alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="321.0" mouseTransparent="true" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Graph" textFill="WHITE">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font size="17.0" />
+         </font></Label>
     </children>
 </Pane>
