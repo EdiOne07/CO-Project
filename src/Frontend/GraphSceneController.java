@@ -1,5 +1,6 @@
 package Frontend;
 
+import Frontend.Graph.Graph;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -27,8 +28,10 @@ public class GraphSceneController {
         }
     }
     public void Graphtest(ActionEvent event) throws IOException{
+        Graph g1= new Graph();
+        stage =new Stage();
         try {
-            System.out.println("Graph results");
+            g1.start(stage);
         }
         catch(Exception e){
             e.printStackTrace();
