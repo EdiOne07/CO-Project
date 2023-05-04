@@ -15,9 +15,9 @@
             <Image url="@Images/background.png" />
          </image>
       </ImageView>
-        <Button layoutX="374.0" layoutY="251.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="64.0" prefWidth="77.0" stylesheets="@Style.css" />
+        <Button layoutX="340.0" layoutY="231.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="64.0" prefWidth="77.0" stylesheets="@Style.css" />
         <Button fx:id="CheckCPU" layoutX="222.0" layoutY="171.0" mnemonicParsing="false" onAction="#goToCPUScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
-      <Label layoutX="252.0" layoutY="230.0" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check CPU" textFill="WHITE" mouseTransparent="true">
+      <Label layoutX="252.0" layoutY="210.0" mouseTransparent="true" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check CPU" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
@@ -25,7 +25,16 @@
             <Glow />
          </effect>
       </Label>
-      <Label layoutX="404.0" layoutY="310.0" onMouseClicked="#goToHDDScene" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check HDD" textFill="WHITE" mouseTransparent="true">
+      <Label layoutX="362.0" layoutY="270.0" mouseTransparent="true" onMouseClicked="#goToHDDScene" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Check HDD" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button fx:id="CheckCPU1" layoutX="477.0" layoutY="274.0" mnemonicParsing="false" onAction="#CSV" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
+      <Label layoutX="515.0" layoutY="313.0" mouseTransparent="true" prefHeight="18.0" prefWidth="77.0" rotate="-10.0" text="Database" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
