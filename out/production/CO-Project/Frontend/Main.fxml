@@ -41,5 +41,14 @@
          <font>
             <Font size="17.0" />
          </font></Label>
+      <Button fx:id="CheckCPU1" layoutX="140.0" layoutY="89.0" mnemonicParsing="false" onAction="#goToSystem" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
+      <Label layoutX="161.0" layoutY="126.0" mouseTransparent="true" prefHeight="30.0" prefWidth="95.0" rotate="-10.3" text=" System Info" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
     </children>
 </Pane>
