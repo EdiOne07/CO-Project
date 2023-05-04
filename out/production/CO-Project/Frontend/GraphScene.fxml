@@ -16,16 +16,16 @@
             </image>
         </ImageView>
         <Button layoutX="121.0" layoutY="50.0" mnemonicParsing="false" onAction="#Graphtest" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
-        <Label contentDisplay="TEXT_ONLY" layoutX="160.0" layoutY="82.0" mouseTransparent="true" prefHeight="46.0" prefWidth="53.0" text="Show&#10;Graph" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+        <Button layoutX="7.0" layoutY="296.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
+        <Label layoutX="44.0" layoutY="340.0" mouseTransparent="true" prefHeight="20.0" prefWidth="67.0" rotate="-10.0" text="Go back" textFill="WHITE">
             <font>
-                <Font size="16.0" />
+                <Font name="Berlin Sans FB Demi Bold" size="17.0" />
             </font>
             <effect>
                 <Glow />
             </effect>
         </Label>
-        <Button layoutX="7.0" layoutY="296.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
-        <Label layoutX="44.0" layoutY="340.0" mouseTransparent="true" prefHeight="20.0" prefWidth="67.0" rotate="-10.0" text="Go back" textFill="WHITE">
+        <Label layoutX="153.0" layoutY="94.0" mouseTransparent="true" prefHeight="22.0" prefWidth="90.0" rotate="-10.0" text="goToGraph" textFill="WHITE">
             <font>
                 <Font name="Berlin Sans FB Demi Bold" size="17.0" />
             </font>
