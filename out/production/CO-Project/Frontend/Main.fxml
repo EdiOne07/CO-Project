@@ -35,11 +35,12 @@
          </effect>
       </Label>
       <Label fx:id="Graph" alignment="CENTER" contentDisplay="CENTER" layoutX="508.0" layoutY="321.0" mouseTransparent="true" prefHeight="15.0" prefWidth="92.0" rotate="-10.0" text="Graph" textFill="WHITE">
-         <effect>
-            <Glow />
-         </effect>
-         <font>
-            <Font size="17.0" />
-         </font></Label>
+          <font>
+              <Font name="Berlin Sans FB Demi Bold" size="17.0" />
+          </font>
+          <effect>
+              <Glow />
+          </effect>
+      </Label>
     </children>
 </Pane>
