@@ -9,9 +9,9 @@
 
 <Pane id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="1244" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.Controller">
     <children>
-        <Button layoutX="588.0" layoutY="481.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="117.0" prefWidth="212.0" stylesheets="@Style.css" />
-        <Button fx:id="CheckCPU" layoutX="420.0" layoutY="329.0" mnemonicParsing="false" onAction="#goToCPUScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
-      <Button layoutX="876.0" layoutY="515.0" mnemonicParsing="false" onAction="#goToGraph" onMouseClicked="#goToGraph" prefHeight="33.0" prefWidth="153.0" stylesheets="@Style.css" />
+        <Button id="buttonLog" layoutX="588.0" layoutY="481.0" mnemonicParsing="false" onAction="#goToHDDScene" prefHeight="117.0" prefWidth="212.0" stylesheets="@Style.css" />
+        <Button id="buttonLog" fx:id="CheckCPU" layoutX="420.0" layoutY="329.0" mnemonicParsing="false" onAction="#goToCPUScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
+      <Button id="buttonLog" layoutX="876.0" layoutY="515.0" mnemonicParsing="false" onAction="#goToGraph" onMouseClicked="#goToGraph" prefHeight="33.0" prefWidth="153.0" stylesheets="@Style.css" />
       <Label layoutX="430.0" layoutY="384.0" mouseTransparent="true" prefHeight="35.0" prefWidth="169.0" rotate="-10.0" text="Check CPU" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />

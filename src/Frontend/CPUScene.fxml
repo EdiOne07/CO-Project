@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="chooseTest" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.CPUSceneController">
-   <Button layoutX="22.0" layoutY="543.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
+   <Button id="buttonLog" layoutX="22.0" layoutY="543.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
    <Label layoutX="50.0" layoutY="596.0" mouseTransparent="true" prefHeight="35.0" prefWidth="120.0" rotate="-10.0" text="Go back" textFill="WHITE">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
@@ -16,7 +16,7 @@
          <Glow />
       </effect>
    </Label>
-   <Button layoutX="245.0" layoutY="52.0" mnemonicParsing="false" onAction="#checkDigitsOfPi" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+   <Button id="buttonLog" layoutX="245.0" layoutY="52.0" mnemonicParsing="false" onAction="#checkDigitsOfPi" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
    <Label contentDisplay="TEXT_ONLY" layoutX="292.0" layoutY="78.0" mouseTransparent="true" prefHeight="89.0" prefWidth="102.0" text="DIGITS &#10;OF PI" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
@@ -25,8 +25,8 @@
          <Glow />
       </effect>
    </Label>
-   <Button layoutX="245.0" layoutY="197.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
-   <Button layoutX="245.0" layoutY="340.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+   <Button id="buttonLog" layoutX="245.0" layoutY="197.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+   <Button id="buttonLog" layoutX="245.0" layoutY="340.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
    <Label contentDisplay="TEXT_ONLY" layoutX="292.0" layoutY="223.0" mouseTransparent="true" prefHeight="89.0" prefWidth="102.0" text="Second test" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP" wrapText="true">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="30.0" />

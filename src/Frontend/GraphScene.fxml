@@ -8,8 +8,8 @@
 
 <AnchorPane id="graphPane" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.GraphSceneController">
     <children>
-        <Button layoutX="373.0" layoutY="31.0" mnemonicParsing="false" onAction="#Graphtest" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
-        <Button layoutX="9.0" layoutY="546.0" mnemonicParsing="false" onAction="#goBack" prefHeight="106.0" prefWidth="138.0" scaleX="0.8" scaleY="0.8" scaleZ="0.8" stylesheets="@Style.css" />
+        <Button id="buttonLog" layoutX="373.0" layoutY="31.0" mnemonicParsing="false" onAction="#Graphtest" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+        <Button id="buttonLog" layoutX="9.0" layoutY="546.0" mnemonicParsing="false" onAction="#goBack" prefHeight="106.0" prefWidth="138.0" scaleX="0.8" scaleY="0.8" scaleZ="0.8" stylesheets="@Style.css" />
         <Label layoutX="50.0" layoutY="599.0" mouseTransparent="true" prefHeight="35.0" prefWidth="129.0" rotate="-10.0" text="Go back" textFill="WHITE">
             <font>
                 <Font name="Berlin Sans FB Demi Bold" size="30.0" />
