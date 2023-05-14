@@ -1,5 +1,10 @@
 package Frontend;
 
+import Frontend.Benchmark.HDD.HDDReadingBenchmark;
+import Frontend.Benchmark.HDD.HDDWriteBenchmark;
+import Frontend.Benchmark.IBenchmark;
+import Frontend.Timing.ITimer;
+import Frontend.Timing.Timer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -27,7 +32,14 @@ public class HDDSceneController {
         }
     }
     public void someHDDtest(ActionEvent event){
-
-        System.out.println("hi HDD test!");
+        IBenchmark bench = new HDDWriteBenchmark();
+        IBenchmark bench1 = new HDDReadingBenchmark();
+        bench1.initialize();
+        bench.initialize();
+        bench.run("fs", true);
+        bench1.run();
+        System.out.println("File read score on primary partition: " + bench1.getResult());
+        bench.clean();
+        bench1.clean();
     }
 }
