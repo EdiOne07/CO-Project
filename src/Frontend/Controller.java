@@ -52,7 +52,7 @@ public class Controller {
             e.printStackTrace();
         }
     }
-    public void CSV(ActionEvent event) throws IOException{
+    public void goToDatabaseScene(ActionEvent event) throws IOException{
         try{
             Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/DatabaseScene.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

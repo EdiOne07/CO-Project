@@ -33,7 +33,7 @@
             <Glow />
          </effect>
       </Label>
-      <Button fx:id="CheckCPU1" layoutX="477.0" layoutY="274.0" mnemonicParsing="false" onAction="#CSV" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
+      <Button fx:id="CheckCPU1" layoutX="477.0" layoutY="274.0" mnemonicParsing="false" onAction="#goToDatabaseScene" prefHeight="103.0" prefWidth="127.0" stylesheets="@Style.css" />
       <Label layoutX="515.0" layoutY="313.0" mouseTransparent="true" prefHeight="18.0" prefWidth="77.0" rotate="-10.0" text="Database" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
