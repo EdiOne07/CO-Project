@@ -5,19 +5,24 @@ import Frontend.Timing.ITimer;
 import Frontend.Timing.Timer;
 
 public class TestDigitsOfPi {
-    private final long time;
+    private long time;
     private float timeInSeconds;
-    private final int load;
-    public TestDigitsOfPi(int load){
+    private int load;
+    private IBenchmark bench;
+    private ITimer timer;
+
+    public TestDigitsOfPi(){
+        bench = new DigitsOfPi();
+        timer = new Timer();
+        bench.warmUp();
+        System.out.println("Finished warming up");
+
+    }
+    public void run(int load){
         this.load = load;
-        IBenchmark bench = new DigitsOfPi();
-        ITimer timer = new Timer();
 
         System.out.println("You choose the load "+ this.load);
         System.out.println("Starting the test...");
-
-        bench.warmUp();
-        System.out.println("Finished warming up");
 
         timer.start();
         timer.resume();

@@ -79,7 +79,7 @@ public class DigitsOfPi implements IBenchmark {
     public void warmUp() {
         // TODO Auto-generated method stub
 
-        int iterations = 10000;
+        int iterations = 5000;
         BigDecimal a = new BigDecimal(1);
         BigDecimal b = new BigDecimal(1).divide(new BigDecimal(Math.sqrt(2)), iterations, RoundingMode.HALF_UP);
         BigDecimal t = new BigDecimal(0.25);

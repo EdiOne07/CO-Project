@@ -7,3 +7,8 @@
     -fx-background-color: transparent;
     -fx-graphic: url('Images/smallButton.png');
 }
+
+#mainPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Background_MainScene.png');
+}
