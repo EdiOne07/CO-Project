@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import Frontend.TestBenchmark.TestDigitsOfPi;
 
 import java.io.IOException;
 
@@ -28,7 +29,18 @@ public class CPUSceneController {
     }
 
     public void checkDigitsOfPi(ActionEvent event){
+        try{
+            Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/DigitsOfPiScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(layout);
+            String css = this.getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm();
+            scene.getStylesheets().add(css);
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
-        System.out.println("helloooo digits of pi!");
+
     }
 }

@@ -5,26 +5,31 @@ import Frontend.Timing.ITimer;
 import Frontend.Timing.Timer;
 
 public class TestDigitsOfPi {
-    private long time;
-    private int load;
-    TestDigitsOfPi(int load){
+    private final long time;
+    private float timeInSeconds;
+    private final int load;
+    public TestDigitsOfPi(int load){
+        this.load = load;
         IBenchmark bench = new DigitsOfPi();
+        ITimer timer = new Timer();
 
+        System.out.println("You choose the load "+ this.load);
+        System.out.println("Starting the test...");
 
         bench.warmUp();
         System.out.println("Finished warming up");
-        ITimer timer = new Timer();
 
         timer.start();
         timer.resume();
         bench.run(this.load);
         time = timer.stop();
-        System.out.println(timer.Convert("s",time));
-        System.out.println("Iterations " + 50 + ":"+ timer.Convert("s",time) + "s");
-
-        System.out.println("Finished in" + timer.Convert("s",timer.stop()) +"s");
+        timeInSeconds = timer.Convert("s", time);
     }
-    public long getTime(){
-        return time;
+    public float getTime(){
+
+        return timeInSeconds;
+    }
+    public int getLoad(){
+        return load;
     }
 }
