@@ -5,10 +5,21 @@
 }
 .button{
     -fx-background-color: transparent;
-    -fx-graphic: url('Images/smallButton.png');
+    -fx-graphic: url('Images/smallerButton.png');
 }
 
 #mainPane{
     -fx-background-size: 100%;
     -fx-background-image: url('Images/Background_MainScene.png');
 }
+#chooseTest{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/startingSceneBackground.png');
+}
+
+#graphPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Results.png');
+}
+
+
