@@ -25,9 +25,9 @@
          <Glow />
       </effect>
    </Label>
-   <Button id="buttonLog" layoutX="245.0" layoutY="197.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
+   <Button id="buttonLog" layoutX="245.0" layoutY="197.0" mnemonicParsing="false" onAction="#MatrixMultiplication" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
    <Button id="buttonLog" layoutX="245.0" layoutY="340.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
-   <Label contentDisplay="TEXT_ONLY" layoutX="292.0" layoutY="223.0" mouseTransparent="true" prefHeight="89.0" prefWidth="102.0" text="Second test" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP" wrapText="true">
+   <Label contentDisplay="TEXT_ONLY" layoutX="292.0" layoutY="223.0" mouseTransparent="true" prefHeight="89.0" prefWidth="102.0" text="Matrix Multiplication" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP" wrapText="true">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
       </font>

@@ -43,4 +43,19 @@ public class CPUSceneController {
 
 
     }
+    public void MatrixMultiplication(ActionEvent event){
+        try{
+            Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/MatrixMultiplicationScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(layout);
+            String css = this.getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm();
+            scene.getStylesheets().add(css);
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
 }
