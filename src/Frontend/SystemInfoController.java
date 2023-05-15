@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
@@ -17,6 +18,8 @@ public class SystemInfoController {
     private Stage stage;
     private Scene scene;
     private Parent layout;
+    @FXML
+    private TextArea output;
 
     public void goBack(ActionEvent event) throws IOException {
         try{
@@ -33,13 +36,23 @@ public class SystemInfoController {
     }
 
     public SystemInfoController() {
+        //output = new TextArea();
         // Get OS information
         String os = System.getProperty("os.name") + " " + System.getProperty("os.version");
         System.out.println("OS: " + os);
+        //output.append("OS:" + "\n");
 
         // Get CPU information
         String cpuModel = System.getenv("PROCESSOR_IDENTIFIER");
         System.out.println("CPU Model: " + cpuModel);
+        //output.setText("CPU Model: " + cpuModel + "\n");
+
+        com.sun.management.OperatingSystemMXBean osBean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+        String architecture = osBean.getArch();
+        long availableProcessors = osBean.getAvailableProcessors();
+
+        System.out.println("Architecture: " + architecture);
+        System.out.println("Number of available processors: " + availableProcessors);
 
         // Get RAM information
         long ram = ((com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean()).getTotalPhysicalMemorySize();
@@ -50,8 +63,7 @@ public class SystemInfoController {
         for (File root : roots) {
             long totalSpace = root.getTotalSpace();
             long freeSpace = root.getFreeSpace();
-            long usableSpace = root.getUsableSpace();
-            System.out.println(root.getPath() + " - Total Space: " + (totalSpace / (1024 * 1024 * 1024)) + " GB, Free Space: " + (freeSpace / (1024 * 1024 * 1024)) + " GB, Usable Space: " + (usableSpace / (1024 * 1024 * 1024)) + " GB");
+            System.out.println(root.getPath() + " - Total Space: " + (totalSpace / (1024 * 1024 * 1024)) + " GB, Free Space: " + (freeSpace / (1024 * 1024 * 1024)) + " GB");
         }
     }
 }
