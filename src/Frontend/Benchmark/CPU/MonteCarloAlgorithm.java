@@ -84,7 +84,7 @@ public class MonteCarloAlgorithm implements IBenchmark {
             //System.out.println(rand_x+" "+rand_y+" "+circle_points+" "+square_points+" - "+pi);
         }
         // Final Estimated Value
-        System.out.println("Final Estimation of Pi = " + pi);
+        //System.out.println("Final Estimation of Pi = " + pi);
     }
 
     @Override

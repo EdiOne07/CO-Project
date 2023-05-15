@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="testPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.MonteCarloSceneController">
+    <Slider id="slider" fx:id="slider" layoutX="53.0" layoutY="320.0" majorTickUnit="1000.0" max="12000.0" min="1000.0" minorTickCount="5" prefHeight="100.0" prefWidth="409.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+    <Button id="buttonLog" layoutX="42.0" layoutY="520.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
+    <Label layoutX="72.0" layoutY="573.0" mouseTransparent="true" prefHeight="27.0" prefWidth="120.0" rotate="-10.0" text="Go back" textFill="WHITE">
+        <font>
+            <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+        </font>
+        <effect>
+            <Glow />
+        </effect>
+    </Label>
+    <Label accessibleRole="BUTTON" layoutX="648.0" layoutY="526.0" mouseTransparent="true" prefHeight="27.0" prefWidth="120.0" text="Run test!" textFill="WHITE">
+        <font>
+            <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+        </font>
+        <effect>
+            <Glow />
+        </effect>
+    </Label>
+    <Button id="transparentButton" layoutX="629.0" layoutY="486.0" mnemonicParsing="false" onAction="#TestMonteCarlo" prefHeight="116.0" prefWidth="202.0" style="-fx-background-color: transparent;" stylesheets="@Style.css" />
+</AnchorPane>
