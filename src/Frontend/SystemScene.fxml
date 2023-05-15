@@ -11,13 +11,13 @@
    <children>
       <ImageView fitHeight="546.0" fitWidth="648.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images/bench.jpg" />
+            <Image url="@Images/background.png" />
          </image>
       </ImageView>
-      <Button layoutX="6.0" layoutY="264.0" mnemonicParsing="false" onAction="#goBack" rotate="8.1" stylesheets="@Style.css" />
-      <Label layoutX="46.0" layoutY="301.0" mouseTransparent="true" prefHeight="30.0" prefWidth="72.0" text="Go back" textAlignment="CENTER">
+      <Button layoutX="1.0" layoutY="250.0" mnemonicParsing="false" onAction="#goBack" prefHeight="118.0" prefWidth="168.0" rotate="8.1" stylesheets="@Style.css" />
+      <Label layoutX="35.0" layoutY="291.0" mouseTransparent="true" prefHeight="35.0" prefWidth="114.0" rotate="-5.2" text="Go back" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="16.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </Label>
    </children>
