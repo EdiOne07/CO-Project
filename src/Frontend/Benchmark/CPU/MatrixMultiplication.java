@@ -4,17 +4,29 @@ import Frontend.Benchmark.IBenchmark;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MatrixMultiplication implements IBenchmark {
     @Override
     public void run() {
-        int[][] A= new int[25][25];
-        int[][] B= new int[25][25];
+        double[][] A= new double[25][25];
+        double[][] B= new double[25][25];
         int m = A.length;
         int n = A[0].length;
         int p = B[0].length;
 
-        int[][] C = new int[m][p];
+        double[][] C = new double[m][p];
+        Random random = new Random();
+        for (int i = 0; i < 25; i++) {
+            for (int j = 0; j < 25; j++) {
+                A[i][j] = random.nextDouble();  // Random double between 0.0 (inclusive) and 1.0 (exclusive)
+            }
+        }
+        for (int i = 0; i < 25; i++) {
+            for (int j = 0; j < 25; j++) {
+                B[i][j] = random.nextDouble();  // Random double between 0.0 (inclusive) and 1.0 (exclusive)
+            }
+        }
 
         // Create threads to compute each row of the result matrix
         List<Thread> threads = new ArrayList<>();
@@ -22,7 +34,7 @@ public class MatrixMultiplication implements IBenchmark {
             final int row = i;
             threads.add(new Thread(() -> {
                 for (int j = 0; j < p; j++) {
-                    int sum = 0;
+                    double sum = 0;
                     for (int k = 0; k < n; k++) {
                         sum += A[row][k] * B[k][j];
                     }

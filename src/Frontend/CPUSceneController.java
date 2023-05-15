@@ -43,10 +43,9 @@ public class CPUSceneController {
 
 
     }
-
-    public void checkMonteCarlo(ActionEvent event){
+    public void MatrixMultiplication(ActionEvent event){
         try{
-            Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/MonteCarloScene.fxml"));
+            Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/MatrixMultiplicationScene.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(layout);
             String css = this.getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm();
