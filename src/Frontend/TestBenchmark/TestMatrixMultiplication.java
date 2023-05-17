@@ -10,7 +10,7 @@ public class TestMatrixMultiplication {
         long time;
          float timeInSeconds;
          int rowA;
-        int colA;
+         int colA;
          int rowB;
          int colB;
          IBenchmark bench;

@@ -26,6 +26,10 @@
     -fx-background-size: 100%;
     -fx-background-image: url('Images/bench.jpg');
 }
+#testPane1{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Run_test_bg.png');
+}
 #slider{
     -fx-pref-width: 500px;
 }
