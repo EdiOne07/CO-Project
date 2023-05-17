@@ -16,7 +16,10 @@ public class FileWriter {
 	private final Timer timer = new Timer();
 	private final Random rand = new Random();
 	private double benchScore;
-
+	private StringBuilder result;
+	public FileWriter() {
+		result = new StringBuilder(); // Initialize StringBuilder
+	}
 	/**
 	 * Writes files on disk using a variable write buffer and fixed file size.
 	 * 
@@ -32,6 +35,7 @@ public class FileWriter {
 	 *            - size of the benchmark file to be written in the disk
 	 * @throws IOException
 	 */
+
 	public void streamWriteFixedFileSize(String filePrefix, String fileSuffix,
 			int minIndex, int maxIndex, long fileSize, boolean clean)
 			throws IOException {
@@ -53,8 +57,9 @@ public class FileWriter {
 
 		benchScore /= (maxIndex - minIndex + 1);
 		String partition = filePrefix.substring(0, filePrefix.indexOf(":\\"));
-		System.out.println("File write score on partition " + partition + ": "
-				+ String.format("%.2f", benchScore) + " MB/sec");
+		result.append("File write score on partition " + partition + ": "
+				+ String.format("%.2f", benchScore) + " MB/sec" + "\n");
+
 	}
 
 	/**
@@ -89,8 +94,8 @@ public class FileWriter {
 
 		benchScore /= (maxIndex - minIndex + 1);
 		String partition = filePrefix.substring(0, filePrefix.indexOf(":\\"));
-		System.out.println("File write score on partition " + partition + ": "
-				+ String.format("%.2f", benchScore) + " MB/sec");
+		result.append("File write score on partition " + partition + ": "
+				+ String.format("%.2f", benchScore) + " MB/sec" + "\n");
 	}
 
 	/**
@@ -138,12 +143,15 @@ public class FileWriter {
 		double seconds = (double)time/1000000000 ; // calculated from timer's 'time'
 		double megabytes = (double) totalBytes / (1024*1024); //
 		double rate = megabytes/seconds; // calculated from the previous two variables
-		System.out.println("Done writing " + totalBytes + " bytes to file: "
+		result.append("Done writing " + totalBytes + " bytes to file: "
 				+ fileName + " in " + nf.format(seconds) + " ms ("
 				+ nf.format(rate) + "MB/sec)" + " with a buffer size of "
-				+ bufferSize / 1024 + " kB");
+				+ bufferSize / 1024 + " kB" + "\n");
 
 		// actual score is write speed (MB/s)
 		benchScore += rate;
+	}
+	public String getResult() {
+		return result.toString();
 	}
 }

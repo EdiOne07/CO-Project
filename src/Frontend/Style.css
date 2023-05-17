@@ -8,6 +8,11 @@
     -fx-graphic: url('Images/smallerButton.png');
 }
 
+#smallbuttonLog {
+    -fx-background-color: transparent;
+    -fx-graphic: url('Images/smallButton.png');
+}
+
 #mainPane{
     -fx-background-size: 100%;
     -fx-background-image: url('Images/Background_MainScene.png');
@@ -26,6 +31,12 @@
     -fx-background-size: 100%;
     -fx-background-image: url('Images/bench.jpg');
 }
+
+#hddPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Background_HDD.png');
+}
+
 #slider{
     -fx-pref-width: 500px;
 }

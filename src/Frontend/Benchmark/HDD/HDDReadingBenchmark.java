@@ -7,9 +7,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class HDDReadingBenchmark implements IBenchmark {
-    private static final int NUM_FILES = 10;
-    private static final int BLOCK_SIZE = 4096;
-    private static final int NUM_BLOCKS = 1000;
+    private static int NUM_FILES;
+    private static int BLOCK_SIZE;
+    private static int NUM_BLOCKS;
     private String prefix;
     private String suffix;
     private long duration;
@@ -17,6 +17,9 @@ public class HDDReadingBenchmark implements IBenchmark {
 
     @Override
     public void initialize(Object... params) {
+        NUM_FILES = (Integer) params[0];
+        BLOCK_SIZE = (Integer) params[1];
+        NUM_BLOCKS = (Integer) params[2];
         prefix = System.getProperty("java.io.tmpdir") + File.separator + "my-benchmark" + File.separator + "file-";
         suffix = ".dat";
         for (int i = 0; i < NUM_FILES; i++) {

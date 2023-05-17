@@ -9,10 +9,10 @@
 <AnchorPane id="chooseTest" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.HDDSceneController">
    <children>
 
-      <Button id="buttonLog" layoutX="236.0" layoutY="95.0" mnemonicParsing="false" onAction="#someHDDtest" prefHeight="110.0" prefWidth="133.0" rotate="10.0" stylesheets="@Style.css" />
-      <Label contentDisplay="TEXT_ONLY" layoutX="297.0" layoutY="128.0" mouseTransparent="true" prefHeight="76.0" prefWidth="104.0" text="HDD&#10;test" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP">
+      <Button id="buttonLog" layoutX="236.0" layoutY="95.0" mnemonicParsing="false" onAction="#sequencialHDDTest" prefHeight="166.0" prefWidth="248.0" rotate="10.0" stylesheets="@Style.css" />
+      <Label contentDisplay="TEXT_ONLY" layoutX="279.0" layoutY="121.0" mouseTransparent="true" prefHeight="114.0" prefWidth="183.0" text="Sequencial &#10;Read/Write&#10;Test" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CLIP" wrapText="true">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
          <effect>
             <Glow />
@@ -22,6 +22,15 @@
       <Label layoutX="72.0" layoutY="573.0" mouseTransparent="true" prefHeight="27.0" prefWidth="120.0" rotate="-10.0" text="Go back" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Label>
+      <Button id="buttonLog" layoutX="254.0" layoutY="246.0" mnemonicParsing="false" onAction="#randomHDDTest" rotate="10.3" stylesheets="@Style.css" />
+      <Label layoutX="283.0" layoutY="260.0" mouseTransparent="true" prefHeight="114.0" prefWidth="170.0" text="Random Read/Write Test" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
          <effect>
             <Glow />
