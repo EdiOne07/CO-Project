@@ -9,7 +9,9 @@ public class HDDWriteBenchmark implements IBenchmark {
     private String prefix;
     private String suffix = ".dat";
     private int minIndex = 0;
-    private int maxIndex = 7;
+    private int maxIndex = 4;
+
+    private String result;
     @Override
     public void run() {
         throw new UnsupportedOperationException(
@@ -24,8 +26,8 @@ public class HDDWriteBenchmark implements IBenchmark {
         // true/false whether the written files should be deleted at the end
         Boolean clean = (Boolean) params[1];
 
-        long fileSize = 1024 * 1024 * 1024; // 256, 512 MB, 1GB // type Long!
-        int bufferSize = 1024; // 4 KB
+        long fileSize = (Long) params[2]; // 256, 512 MB, 1GB // type Long!
+        int bufferSize = (Integer) params[3]; // 4 KB
 
         try {
             if (option.equals("fs"))
@@ -37,6 +39,7 @@ public class HDDWriteBenchmark implements IBenchmark {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        result = writer.getResult();
     }
 
     @Override
@@ -67,6 +70,6 @@ public class HDDWriteBenchmark implements IBenchmark {
 
     @Override
     public String getResult() {
-        return null;
+        return result;
     }
 }
