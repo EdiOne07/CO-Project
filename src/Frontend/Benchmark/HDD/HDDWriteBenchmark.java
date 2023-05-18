@@ -9,7 +9,7 @@ public class HDDWriteBenchmark implements IBenchmark {
     private String prefix;
     private String suffix = ".dat";
     private int minIndex = 0;
-    private int maxIndex = 4;
+    private int maxIndex = 8;
 
     private String result;
     @Override

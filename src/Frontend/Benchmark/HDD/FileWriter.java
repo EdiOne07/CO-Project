@@ -9,13 +9,13 @@ import java.util.Random;
 
 public class FileWriter {
 
-	private static final int MIN_BUFFER_SIZE = 1024; // KB
-	private static final int MAX_BUFFER_SIZE = 1024 * 1024 * 32; // MB
-	private static final long MIN_FILE_SIZE = 1024 * 1024; // MB
-	private static final long MAX_FILE_SIZE = 1024 * 1024 * 512; // MB
+	private static final int MIN_BUFFER_SIZE = 2048; // KB
+	private static final int MAX_BUFFER_SIZE = 1024 * 64; // MB
+	private static final long MIN_FILE_SIZE = 1024 * 128; // MB
+	private static final long MAX_FILE_SIZE = 1024 * 1024 * 1024; // MB
 	private final Timer timer = new Timer();
 	private final Random rand = new Random();
-	private double benchScore;
+	private double benchScore = 0;
 	private StringBuilder result;
 	public FileWriter() {
 		result = new StringBuilder(); // Initialize StringBuilder
@@ -57,8 +57,7 @@ public class FileWriter {
 
 		benchScore /= (maxIndex - minIndex + 1);
 		String partition = filePrefix.substring(0, filePrefix.indexOf(":\\"));
-		result.append("File write score on partition " + partition + ": "
-				+ String.format("%.2f", benchScore) + " MB/sec" + "\n");
+		result.append("File write score on partition ").append(partition).append(": ").append(String.format("%.2f", benchScore)).append(" MB/sec").append("\n");
 
 	}
 
@@ -94,8 +93,7 @@ public class FileWriter {
 
 		benchScore /= (maxIndex - minIndex + 1);
 		String partition = filePrefix.substring(0, filePrefix.indexOf(":\\"));
-		result.append("File write score on partition " + partition + ": "
-				+ String.format("%.2f", benchScore) + " MB/sec" + "\n");
+		result.append("File write score on partition ").append(partition).append(": ").append(String.format("%.2f", benchScore)).append(" MB/sec").append("\n");
 	}
 
 	/**
@@ -142,11 +140,12 @@ public class FileWriter {
 		NumberFormat nf = new DecimalFormat("#.00");
 		double seconds = (double)time/1000000000 ; // calculated from timer's 'time'
 		double megabytes = (double) totalBytes / (1024*1024); //
-		double rate = megabytes/seconds; // calculated from the previous two variables
-		result.append("Done writing " + totalBytes + " bytes to file: "
-				+ fileName + " in " + nf.format(seconds) + " ms ("
-				+ nf.format(rate) + "MB/sec)" + " with a buffer size of "
-				+ bufferSize / 1024 + " kB" + "\n");
+		double rate = megabytes / seconds; // calculated from the previous two variables
+		result.append("Done writing ").append(totalBytes)
+				.append(" bytes to file: ").append(fileName).append(" in ")
+				.append(nf.format(seconds)).append(" ms (").append(nf.format(rate))
+				.append("MB/sec)").append(" with a buffer size of ")
+				.append(bufferSize / 1024).append(" kB").append("\n");
 
 		// actual score is write speed (MB/s)
 		benchScore += rate;

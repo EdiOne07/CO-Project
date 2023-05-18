@@ -6,6 +6,8 @@ import Frontend.Timing.Timer;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Random;
 import java.util.RandomAccess;
 
@@ -25,6 +27,7 @@ public class HDDRandomAccess implements IBenchmark {
         final int steps = 25000; // number of I/O ops
         // used by the fixed time option
         final int runtime = 5000; // ms
+        NumberFormat nf = new DecimalFormat("#.00");
 
         try {
             // read benchmark
@@ -39,7 +42,8 @@ public class HDDRandomAccess implements IBenchmark {
                             bufferSize, steps);
                     result = steps + " random reads in " + timeMs + " ms ["
                             + (steps * bufferSize / 1024 / 1024) + " MB, "
-                            + 1.0 * (steps * bufferSize / 1024 / 1024) / timeMs * 1000 + "MB/s]";
+                            + nf.format(((double) (steps * bufferSize) / 1024 / 1024) / timeMs * 1000) + "MB/s]";
+
                 }
                 // read for a fixed time amount and measure time
                 else if (String.valueOf(param[1]).toLowerCase().equals("ft")) {
@@ -48,7 +52,7 @@ public class HDDRandomAccess implements IBenchmark {
                             bufferSize, runtime);
                     result = ios + " I/Os per second ["
                             + Math.abs((ios * bufferSize / 1024 / 1024)) + " MB, "
-                            + Math.abs(1.0 * (ios * bufferSize / 1024 / 1024) / runtime * 1000) + "MB/s]";
+                            + nf.format(Math.abs(((double) (ios * bufferSize) / 1024 / 1024) / runtime * 1000)) + "MB/s]";
                 } else
                     throw new UnsupportedOperationException("Read option \""
                             + String.valueOf(param[1])
@@ -64,9 +68,9 @@ public class HDDRandomAccess implements IBenchmark {
                     long timeMs = new RandomAccess().randomReadFixedSize(PATH,
                             bufferSize, steps);
 
-                    result = steps + " random writes in " + timeMs + " ms ["
+                    result = steps + " random reads in " + timeMs + " ms ["
                             + (steps * bufferSize / 1024 / 1024) + " MB, "
-                            + 1.0 * (steps * bufferSize / 1024 / 1024) / timeMs * 1000 + "MB/s]";
+                            + nf.format(((double) (steps * bufferSize) / 1024 / 1024) / timeMs * 1000) + "MB/s]";
                 }
 
                 else if (String.valueOf(param[1]).toLowerCase().equals("ft")) {
@@ -75,7 +79,7 @@ public class HDDRandomAccess implements IBenchmark {
 
                     result = ios + " I/Os per second ["
                             + Math.abs((ios * bufferSize / 1024 / 1024)) + " MB, "
-                            + Math.abs(1.0 * (ios * bufferSize / 1024 / 1024) / runtime * 1000) + "MB/s]";
+                            + nf.format(Math.abs(((double) (ios * bufferSize) / 1024 / 1024) / runtime * 1000)) + "MB/s]";
                 } else
                     throw new UnsupportedOperationException("Read option\""
                             + String.valueOf(param[1]) + "\" is not imeplemented");

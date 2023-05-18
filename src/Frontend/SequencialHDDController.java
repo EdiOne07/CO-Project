@@ -2,21 +2,22 @@ package Frontend;
 
 import Frontend.TestBenchmark.TestHDDReadSeq;
 import Frontend.TestBenchmark.TestHDDWriteSeq;
-import Frontend.TestBenchmark.TestMatrixMultiplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class SequencialHDDController {
     private TestHDDReadSeq test1;
+    private final NumberFormat nf = new DecimalFormat("#.00");
     private TestHDDWriteSeq test2;
     private Stage stage;
     private Scene scene;
@@ -51,19 +52,18 @@ public class SequencialHDDController {
     }
 
     public void TestHDD(ActionEvent event) {
-        Integer num_files = (int) (read_nofile_slider.getValue());
-        Integer num_blocks = (int) (read_noblock_slider.getValue());
-        Integer block_size = (int) (read_szblock_slider.getValue());
-        Long fileSize = (long) (write_file_slider.getValue())*1024*1024;
-        Integer bufferSize = (int) (write_buff_slider.getValue());
+        int num_files = (int) (read_nofile_slider.getValue());
+        int num_blocks = (int) (read_noblock_slider.getValue());
+        int block_size = (int) (read_szblock_slider.getValue());
+        long fileSize = (long) (write_file_slider.getValue())*1024*1024;
+        int bufferSize = (int) (write_buff_slider.getValue());
         test1.initialize(num_files, block_size, num_blocks);
         test1.run();
         test2.run(fileSize, bufferSize);
         test1.getResult();
         test2.getResult();
         test1.clean();
-        test1.getScore();
-//        test2.getScore();
-        //Integer load
+        double score = (double) 100*(test1.getScore() + test2.getScore()) / 2;
+        System.out.println("Total score is: " + nf.format(score));
     }
 }
