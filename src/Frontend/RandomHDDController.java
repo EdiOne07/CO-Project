@@ -2,10 +2,12 @@ package Frontend;
 
 import Frontend.TestBenchmark.TestRandomHDD;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +17,13 @@ public class RandomHDDController {
     private Stage stage;
     private Scene scene;
     private Parent layout;
+    @FXML
+    private Slider fileSize_slider;
+    @FXML
+    private Slider bufferSize_slider;
+    public RandomHDDController() {
+        test = new TestRandomHDD();
+    }
     public void goBack(ActionEvent event) throws IOException {
         try{
             Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/HDDScene.fxml"));
@@ -29,7 +38,12 @@ public class RandomHDDController {
         }
     }
 
-    public void testHDD(ActionEvent event) {
-        
+    public void TestHDD(ActionEvent event) {
+        Long fileSize = (long) (fileSize_slider.getValue())*1024*1024;
+        Integer bufferSize = (int) (bufferSize_slider.getValue())*1024;
+        test.initialize(fileSize);
+        test.run(bufferSize);
+        test.clean();
+        test.getResult();
     }
 }

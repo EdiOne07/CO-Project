@@ -63,17 +63,17 @@ public class HDDSceneController {
 
     public void someHDDTest(ActionEvent event) {
 //        IBenchmark bench = new HDDWriteBenchmark();
-        IBenchmark bench2 = new HDDRandomAccess();
-        bench2.initialize(1024*1024*1024*2);
+//        IBenchmark bench2 = new HDDRandomAccess();
+//        bench2.initialize(1024*1024*1024*2);
 //        bench.initialize();
 //        bench.run("fs", true, (long) 1024*1024*1024, 1024*4);
-        bench2.run("w", "ft", 1024);
-        System.out.println(bench2.getResult());
-        bench2.run("w", "ft", 1024);
-        System.out.println(bench2.getResult());
-        bench2.run("w", "ft", 1024);
-        System.out.println(bench2.getResult());
+//        bench2.run("w", "ft", 1024);
+//        System.out.println(bench2.getResult());
+//        bench2.run("w", "ft", 1024);
+//        System.out.println(bench2.getResult());
+//        bench2.run("w", "ft", 1024);
+//        System.out.println(bench2.getResult());
 //        bench.clean();
-        bench2.clean();
+//        bench2.clean();
     }
 }
