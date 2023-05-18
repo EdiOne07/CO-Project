@@ -99,7 +99,7 @@ public class MatrixMultiplication implements IBenchmark {
 
         // Perform matrix multiplication
         double[][] result = multiplyMatrices(matrixA, matrixB);
-        double totalFloatingPointOperations = aRows * aCols * bCols*bRows;
+
 
         // Print the result
         System.out.println("Result:");
@@ -109,9 +109,6 @@ public class MatrixMultiplication implements IBenchmark {
             }
             System.out.println();
         }
-        int availableProcessorCores = Runtime.getRuntime().availableProcessors();
-        System.out.println("The number of available threads is:"+ availableProcessorCores);
-        System.out.println("The total number of operations is:"+totalFloatingPointOperations);
     }
 
     @Override

@@ -6,14 +6,14 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="testPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.MatrixMultiplicationController">
-    <Slider id="slider" fx:id="slider1" layoutX="659.0" layoutY="291.0" majorTickUnit="2000.0" max="1000000.0" min="100000.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+    <Slider id="slider" fx:id="slider1" layoutX="659.0" layoutY="291.0" majorTickUnit="2000.0" max="10000.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
     <Button id="transparentButton" layoutX="126.0" layoutY="522.0" mnemonicParsing="false" onAction="#goBack" prefHeight="116.0" prefWidth="202.0" style="-fx-background-color: transparent;" stylesheets="@Style.css" text="Go Back" textFill="WHITE">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
       </font></Button>
-   <Slider id="slider" fx:id="slider11" layoutX="666.0" layoutY="339.0" majorTickUnit="2000.0" max="1000000.0" min="100000.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
-   <Slider id="slider" fx:id="slider111" layoutX="645.0" layoutY="467.0" majorTickUnit="2000.0" max="1000000.0" min="100000.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
-   <Slider id="slider" fx:id="slider112" layoutX="652.0" layoutY="516.0" majorTickUnit="2000.0" max="1000000.0" min="100000.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+   <Slider id="slider" fx:id="slider11" layoutX="666.0" layoutY="339.0" majorTickUnit="2000.0" max="10000.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+   <Slider id="slider" fx:id="slider111" layoutX="645.0" layoutY="467.0" majorTickUnit="2000.0" max="10000.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+   <Slider id="slider" fx:id="slider112" layoutX="652.0" layoutY="516.0" majorTickUnit="2000.0" max="10000.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
    <Button layoutX="861.0" layoutY="609.0" mnemonicParsing="false" onAction="#TestMatrixMultiplication" style="-fx-background-color: transparent;" stylesheets="@Style.css" text="Button" textFill="WHITE">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="24.0" />
