@@ -4,9 +4,9 @@ public class Elements {
     private String comp_name;
     private String cpu_name;
     private String hdd_name;
-    private int score;
+    private Integer score;
 
-    public Elements(String comp_name, String cpu_name, String hdd_name, int score) {
+    public Elements(String comp_name, String cpu_name, String hdd_name, Integer score) {
         this.comp_name = comp_name;
         this.cpu_name = cpu_name;
         this.hdd_name = hdd_name;
@@ -25,7 +25,7 @@ public class Elements {
         return hdd_name;
     }
 
-    public int getScore() {
+    public Integer getScore() {
         return score;
     }
 }

@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,23 +15,26 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import Backend.CSVWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class DatabaseSceneController{
+public class DatabaseSceneController implements Initializable {
 
     private Stage stage;
     private Scene scene;
     private Parent layout;
     @FXML
-    public TableView<Elements> table;
+    private TableView<Elements> table;
     @FXML
-    public TableColumn<Elements,String> computer_Name;
+    private TableColumn<Elements,String> computer_Name;
     @FXML
-    public TableColumn<Elements,String> cpu;
+    private TableColumn<Elements,String> cpu;
     @FXML
-    public TableColumn<Elements,String> hdd;
+    private TableColumn<Elements,String> hdd;
     @FXML
-    public TableColumn<Elements,Integer> Score;
+    private TableColumn<Elements,Integer> score;
+
     public void goBack(ActionEvent event) throws IOException {
         try{
             Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/Main.fxml"));
@@ -45,7 +49,7 @@ public class DatabaseSceneController{
         }
     }
 
-    public DatabaseSceneController(ActionEvent event){
+    public DatabaseSceneController(){
 
        /* CSVWriter a=new CSVWriter();
         a.CreateCSV();
@@ -55,18 +59,27 @@ public class DatabaseSceneController{
         hdd.setCellValueFactory(new PropertyValueFactory<>("HDD"));
         score.setCellValueFactory(new PropertyValueFactory<>("Score"));
         tableView.getItems().addAll(info);*/
-        TableColumn comp_name=new TableColumn("comp_name");
-        TableColumn CPU=new TableColumn("CPU");
-        TableColumn HDD=new TableColumn("HDD");
-        TableColumn score=new TableColumn("Score");
-        table.getColumns().addAll(comp_name,CPU,HDD,score);
-        final ObservableList<Elements> data= FXCollections.observableArrayList(
+        /*final ObservableList<Elements> data= FXCollections.observableArrayList(
             new Elements("Dorian","Popa","inoata",234)
         );
-        comp_name.setCellValueFactory(new PropertyValueFactory<>("Computer Name"));
-        CPU.setCellValueFactory(new PropertyValueFactory<>("CPU"));
-        HDD.setCellValueFactory(new PropertyValueFactory<>("HDD"));
+        computer_Name.setCellValueFactory(new PropertyValueFactory<>("Computer Name"));
+        cpu.setCellValueFactory(new PropertyValueFactory<>("CPU"));
+        hdd.setCellValueFactory(new PropertyValueFactory<>("HDD"));
         score.setCellValueFactory(new PropertyValueFactory<>("Score"));
+        table.setItems(data);*/
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        computer_Name.setCellValueFactory(new PropertyValueFactory<Elements,String>("comp_name"));
+        cpu.setCellValueFactory(new PropertyValueFactory<Elements,String>("cpu_name"));
+        hdd.setCellValueFactory(new PropertyValueFactory<Elements,String>("hdd_name"));
+        score.setCellValueFactory(new PropertyValueFactory<Elements,Integer>("score"));
+        ObservableList<Elements> data= FXCollections.observableArrayList(
+                new Elements("Dorian","Popa","inoata",234),
+                new Elements("Alt dorian", "tot Popa", "are hdd", 10000)
+        );
         table.setItems(data);
     }
 }
