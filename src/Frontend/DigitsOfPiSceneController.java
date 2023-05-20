@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import Frontend.TestBenchmark.TestDigitsOfPi;
 import javafx.stage.Stage;
@@ -13,6 +14,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DigitsOfPiSceneController {
+    @FXML
+    private Label scoreLabel;
     private  TestDigitsOfPi test;
     private Stage stage;
     private Scene scene;
@@ -27,7 +30,8 @@ public class DigitsOfPiSceneController {
     public void TestDigitsOfPi(ActionEvent event){
         Integer load = (int) (slider.getValue());
         test.run(load);
-        System.out.println("Finished in " + test.getTime() + " s");
+        //System.out.println("Finished in " + test.getTime() + " s");
+        scoreLabel.setText(test.getTime() + " s");
     }
     public void goBack(ActionEvent event) throws IOException {
         try{

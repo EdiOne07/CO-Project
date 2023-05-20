@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import Frontend.TestBenchmark.TestDigitsOfPi;
 import javafx.stage.Stage;
@@ -26,6 +27,8 @@ public class MatrixMultiplicationController {
     private Slider slider111;
     @FXML
     private Slider slider112;
+    @FXML
+    private Label scoreLabel;
     public MatrixMultiplicationController(){
         test = new TestMatrixMultiplication();
 

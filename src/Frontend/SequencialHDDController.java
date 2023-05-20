@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
@@ -16,6 +17,8 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 public class SequencialHDDController {
+    @FXML
+    private Label scoreLabel;
     private TestHDDReadSeq test1;
     private final NumberFormat nf = new DecimalFormat("#.00");
     private TestHDDWriteSeq test2;

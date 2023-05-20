@@ -7,12 +7,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class RandomHDDController {
+    @FXML
+    private Label scoreLabel;
     private TestRandomHDD test;
     private Stage stage;
     private Scene scene;
