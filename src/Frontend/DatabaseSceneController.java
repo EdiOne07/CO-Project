@@ -51,22 +51,7 @@ public class DatabaseSceneController implements Initializable {
 
     public DatabaseSceneController(){
 
-       /* CSVWriter a=new CSVWriter();
-        a.CreateCSV();
-        List<Elements> info=a.readCSV("D:\\Project\\test.csv");
-        computer_Name.setCellValueFactory(new PropertyValueFactory<>("Computer Name"));
-        cpu.setCellValueFactory(new PropertyValueFactory<>("CPU"));
-        hdd.setCellValueFactory(new PropertyValueFactory<>("HDD"));
-        score.setCellValueFactory(new PropertyValueFactory<>("Score"));
-        tableView.getItems().addAll(info);*/
-        /*final ObservableList<Elements> data= FXCollections.observableArrayList(
-            new Elements("Dorian","Popa","inoata",234)
-        );
-        computer_Name.setCellValueFactory(new PropertyValueFactory<>("Computer Name"));
-        cpu.setCellValueFactory(new PropertyValueFactory<>("CPU"));
-        hdd.setCellValueFactory(new PropertyValueFactory<>("HDD"));
-        score.setCellValueFactory(new PropertyValueFactory<>("Score"));
-        table.setItems(data);*/
+
     }
 
     @Override
@@ -76,10 +61,9 @@ public class DatabaseSceneController implements Initializable {
         cpu.setCellValueFactory(new PropertyValueFactory<Elements,String>("cpu_name"));
         hdd.setCellValueFactory(new PropertyValueFactory<Elements,String>("hdd_name"));
         score.setCellValueFactory(new PropertyValueFactory<Elements,Integer>("score"));
-        ObservableList<Elements> data= FXCollections.observableArrayList(
-                new Elements("Dorian","Popa","inoata",234),
-                new Elements("Alt dorian", "tot Popa", "are hdd", 10000)
-        );
+        CSVWriter a=new CSVWriter();
+        a.CreateCSV();
+        ObservableList<Elements> data= a.readCSV("test.csv");
         table.setItems(data);
     }
 }

@@ -1,4 +1,7 @@
 package Backend;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +44,9 @@ public class CSVWriter {
             }
         }
     }
-    public List<Elements> readCSV(String filename) {
+    public ObservableList<Elements> readCSV(String filename) {
         BufferedReader reader = null;
-        List<Elements> info=new ArrayList<>();
+        ObservableList<Elements> info= FXCollections.observableArrayList();
         try {
             reader = new BufferedReader(new FileReader(filename));
             String line = null;
@@ -52,7 +55,7 @@ public class CSVWriter {
                 String cpu = parts[0];
                 String hdd = parts[1];
                 String pc=parts[2];
-                int score= Integer.parseInt(parts[3]);
+                String score=parts[3];
                 System.out.println("CPU : " + cpu);
                 System.out.println("Hdd : " + hdd);
                 Elements element=new Elements(cpu,hdd,pc,score);
