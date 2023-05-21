@@ -9,6 +9,7 @@ public class TestMonteCarlo {
     private long time;
     private float timeInSeconds;
     private int load;
+    private float score;
     private IBenchmark bench;
     private ITimer timer;
 
@@ -30,10 +31,15 @@ public class TestMonteCarlo {
         bench.run(this.load);
         time = timer.stop();
         timeInSeconds = timer.Convert("s", time);
+        System.out.println("Finished in: " + timeInSeconds + " s");
+        score = load / timeInSeconds /100;
+        System.out.println("The score is:" + score);
     }
     public float getTime(){
-
         return timeInSeconds;
+    }
+    public float getScore(){
+        return score;
     }
     public int getLoad(){
         return load;
