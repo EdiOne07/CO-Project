@@ -40,7 +40,7 @@ public class MatrixMultiplicationController {
         Integer rowB = (int) (slider111.getValue());
         Integer colB = (int) (slider112.getValue());
         test.run(rowA,colA,rowB,colB);
-        System.out.println("Finished in " + test.getTime() + " s");
+        scoreLabel.setText(test.getScore()+" "+"points");
     }
     public void goBack(ActionEvent event) throws IOException {
         try{

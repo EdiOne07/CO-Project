@@ -109,6 +109,8 @@ public class MatrixMultiplication implements IBenchmark {
             }
             System.out.println();
         }
+        matrixA=null;
+        matrixB=null;
     }
 
     @Override

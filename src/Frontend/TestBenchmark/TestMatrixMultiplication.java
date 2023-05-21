@@ -17,6 +17,7 @@ public class TestMatrixMultiplication {
          int colB;
          IBenchmark bench;
          ITimer timer;
+         int score_final;
 
     public TestMatrixMultiplication() {
             bench = new MatrixMultiplication();
@@ -36,21 +37,27 @@ public class TestMatrixMultiplication {
 
             timer.start();
             timer.resume();
-            bench.run(200,155,300,325);
+            bench.run(rowA,colA,rowB,colB);
             time = timer.stop();
             timeInSeconds = timer.Convert("s", time);
             System.out.println("Finished in"+ timeInSeconds);
-            double totalFloatingPointOperations = rowA * colA * colB;
+            double totalFloatingPointOperations =abs(rowA * colA * colB);
             System.out.println("The total number of operations is:"+totalFloatingPointOperations);
             double availableProcessorCores = Runtime.getRuntime().availableProcessors();
             System.out.println("The number of available threads is:"+ availableProcessorCores);
             double matrix_size=rowA*colB;
             System.out.println("The size of the new matrix is:"+ matrix_size);
-            double score=(totalFloatingPointOperations/(timeInSeconds*availableProcessorCores))*matrix_size*10.0;
+            double scalingFactor = 10.0 * (matrix_size / 10000);
+            double  score=matrix_size / totalFloatingPointOperations / (timeInSeconds * availableProcessorCores)*10000.0;
             System.out.println("The score is:"+score);
+            score_final=(int)score;
+
        }
         public float getTime () {
 
             return timeInSeconds;
+        }
+        public int getScore(){
+            return score_final;
         }
 }
