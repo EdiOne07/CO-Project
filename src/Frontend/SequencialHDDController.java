@@ -20,7 +20,6 @@ public class SequencialHDDController {
     @FXML
     private Label scoreLabel;
     private TestHDDReadSeq test1;
-    private final NumberFormat nf = new DecimalFormat("#.00");
     private TestHDDWriteSeq test2;
     private Stage stage;
     private Scene scene;
@@ -60,13 +59,14 @@ public class SequencialHDDController {
         int block_size = (int) (read_szblock_slider.getValue());
         long fileSize = (long) (write_file_slider.getValue())*1024*1024;
         int bufferSize = (int) (write_buff_slider.getValue());
+        scoreLabel.setText("Running the benchmark. Please wait!");
         test1.initialize(num_files, block_size, num_blocks);
         test1.run();
         test2.run(fileSize, bufferSize);
         test1.getResult();
         test2.getResult();
         test1.clean();
-        double score = (double) 100*(test1.getScore() + test2.getScore()) / 2;
-        System.out.println("Total score is: " + nf.format(score));
+        int score = 100*(test1.getScore() + test2.getScore()) / 2;
+        scoreLabel.setText(score+ " points");
     }
 }

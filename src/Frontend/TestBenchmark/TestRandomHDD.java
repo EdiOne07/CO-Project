@@ -53,7 +53,7 @@ public class TestRandomHDD {
     public String getResult() {
         NumberFormat nf = new DecimalFormat("#.00");
         System.out.println(result);
-        double score = (double)(fileSize * bufferSize) / (totalTime/10);
-        return  nf.format(score);
+        double score = (double) ((fileSize * bufferSize) / (totalTime*10));
+        return  Integer.valueOf((int) score).toString();
     }
 }

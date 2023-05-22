@@ -35,7 +35,8 @@ public class TestHDDReadSeq {
     public void getResult() {
         System.out.println("File read on primary partition: " + bench.getResult());
     }
-    public double getScore() {
-        return (double) 100*(num_blocks * num_files * block_size) / (totalTime);
+    public int getScore() {
+        double score = (double) (1000 * (num_blocks * block_size)) / (totalTime);
+        return (int) Math.abs(score);
     }
 }

@@ -44,10 +44,12 @@ public class RandomHDDController {
     public void TestHDD(ActionEvent event) {
         Long fileSize = (long) (fileSize_slider.getValue())*1024*1024;
         Integer bufferSize = (int) (bufferSize_slider.getValue())*1024;
+        scoreLabel.setText("Running the benchmark. Please wait!");
         test.initialize(fileSize);
         test.run(bufferSize);
         test.clean();
-        //System.out.println(test.getResult());
-        scoreLabel.setText(test.getResult());
+        String score = test.getResult();
+        scoreLabel.setText(score + " " + "points");
+
     }
 }
