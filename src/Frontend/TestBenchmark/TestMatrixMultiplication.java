@@ -51,6 +51,7 @@ public class TestMatrixMultiplication {
             double  score=matrix_size / totalFloatingPointOperations / (timeInSeconds * availableProcessorCores)*10000.0;
             System.out.println("The score is:"+score);
             score_final=(int)score;
+            //score_final = (int) (Math.sqrt(rowA*rowB*colA*colB)/Math.sqrt(timeInSeconds)/10);
 
        }
         public float getTime () {

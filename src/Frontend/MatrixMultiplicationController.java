@@ -18,8 +18,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MatrixMultiplicationController {
-    @FXML
-    private ImageView bubble;
     private  TestMatrixMultiplication test;
     private Stage stage;
     private Scene scene;
@@ -40,32 +38,12 @@ public class MatrixMultiplicationController {
     }
 
     public void TestMatrixMultiplication(ActionEvent event){
-        String imagePath = "Frontend/Images/bubble.png";
-        String transparentPath = "Frontend/Images/transparent.png";
-
-        Image transparentImage = new Image(transparentPath);
-        Image image = new Image(imagePath);
-
-        bubble.setImage(image);
-        Task<Void> task = new Task<>() {
-            @Override
-            protected Void call() throws Exception {
-                Integer rowA = (int) (slider1.getValue());
-                Integer colA = (int) (slider11.getValue());
-                Integer rowB = (int) (slider111.getValue());
-                Integer colB = (int) (slider112.getValue());
-                test.run(rowA,colA,rowB,colB);
-                return null;
-            }
-        };
-
-        task.setOnSucceeded(e -> {
-            bubble.setImage(transparentImage);
-            scoreLabel.setText(test.getScore()+" "+"points");
-        });
-
-        new Thread(task).start();
-
+        Integer rowA = (int) (slider1.getValue());
+        Integer colA = (int) (slider11.getValue());
+        Integer rowB = (int) (slider111.getValue());
+        Integer colB = (int) (slider112.getValue());
+        test.run(rowA,colA,rowB,colB);
+        scoreLabel.setText(test.getScore()+" "+"points");
 
     }
     public void goBack(ActionEvent event) throws IOException {

@@ -67,7 +67,7 @@ public class DigitsOfPiSceneController {
 
         task.setOnSucceeded(e -> {
             bubble.setImage(transparentImage);
-            scoreLabel.setText(test.getScore() + "");
+            scoreLabel.setText(""+test.getScore());
         });
 
         new Thread(task).start();

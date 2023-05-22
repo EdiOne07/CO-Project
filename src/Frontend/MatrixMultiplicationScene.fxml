@@ -30,7 +30,6 @@
             <Glow />
         </effect>
     </Label>
-    <ImageView fx:id="bubble" fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" />
 
 
 </AnchorPane>
