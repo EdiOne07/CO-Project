@@ -1,6 +1,7 @@
 package Frontend;
 
 import Frontend.TestBenchmark.TestMatrixMultiplication;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,11 +11,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import Frontend.TestBenchmark.TestDigitsOfPi;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MatrixMultiplicationController {
+    @FXML
+    private ImageView bubble;
     private  TestMatrixMultiplication test;
     private Stage stage;
     private Scene scene;
@@ -35,12 +40,33 @@ public class MatrixMultiplicationController {
     }
 
     public void TestMatrixMultiplication(ActionEvent event){
-        Integer rowA = (int) (slider1.getValue());
-        Integer colA = (int) (slider11.getValue());
-        Integer rowB = (int) (slider111.getValue());
-        Integer colB = (int) (slider112.getValue());
-        test.run(rowA,colA,rowB,colB);
-        scoreLabel.setText(test.getScore()+" "+"points");
+        String imagePath = "Frontend/Images/bubble.png";
+        String transparentPath = "Frontend/Images/transparent.png";
+
+        Image transparentImage = new Image(transparentPath);
+        Image image = new Image(imagePath);
+
+        bubble.setImage(image);
+        Task<Void> task = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+                Integer rowA = (int) (slider1.getValue());
+                Integer colA = (int) (slider11.getValue());
+                Integer rowB = (int) (slider111.getValue());
+                Integer colB = (int) (slider112.getValue());
+                test.run(rowA,colA,rowB,colB);
+                return null;
+            }
+        };
+
+        task.setOnSucceeded(e -> {
+            bubble.setImage(transparentImage);
+            scoreLabel.setText(test.getScore()+" "+"points");
+        });
+
+        new Thread(task).start();
+
+
     }
     public void goBack(ActionEvent event) throws IOException {
         try{

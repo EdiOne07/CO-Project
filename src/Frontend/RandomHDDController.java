@@ -1,6 +1,7 @@
 package Frontend;
 
 import Frontend.TestBenchmark.TestRandomHDD;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +10,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class RandomHDDController {
+    @FXML
+    private ImageView bubble;
     @FXML
     private Label scoreLabel;
     private TestRandomHDD test;
@@ -42,14 +47,32 @@ public class RandomHDDController {
     }
 
     public void TestHDD(ActionEvent event) {
-        Long fileSize = (long) (fileSize_slider.getValue())*1024*1024;
-        Integer bufferSize = (int) (bufferSize_slider.getValue())*1024;
-        scoreLabel.setText("Running the benchmark. Please wait!");
-        test.initialize(fileSize);
-        test.run(bufferSize);
-        test.clean();
-        String score = test.getResult();
-        scoreLabel.setText(score + " " + "points");
+        String imagePath = "Frontend/Images/bubble.png";
+        String transparentPath = "Frontend/Images/transparent.png";
 
+        Image transparentImage = new Image(transparentPath);
+        Image image = new Image(imagePath);
+
+        bubble.setImage(image);
+
+        Task<Void> task = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+                Long fileSize = (long) (fileSize_slider.getValue())*1024*1024;
+                Integer bufferSize = (int) (bufferSize_slider.getValue())*1024;
+                test.initialize(fileSize);
+                test.run(bufferSize);
+                return null;
+            }
+        };
+
+        task.setOnSucceeded(e -> {
+            bubble.setImage(transparentImage);
+            test.clean();
+            String score = test.getResult();
+            scoreLabel.setText(score + " " + "points");
+        });
+
+        new Thread(task).start();
     }
 }

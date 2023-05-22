@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -33,4 +34,5 @@
          <Glow />
       </effect>
    </Label>
+   <ImageView fx:id="bubble" fitHeight="150.0" fitWidth="200.0" layoutX="731.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
 </AnchorPane>

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.image.ImageView?>
 <AnchorPane id="testPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.MonteCarloSceneController">
     <Slider id="slider" fx:id="slider" layoutX="53.0" layoutY="320.0" majorTickUnit="2000.0" max="20000.0" min="1000.0" minorTickCount="5" prefHeight="100.0" prefWidth="409.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
     <Button id="buttonLog" layoutX="42.0" layoutY="520.0" mnemonicParsing="false" onAction="#goBack" prefHeight="110.0" prefWidth="133.0" stylesheets="@Style.css" />
@@ -35,4 +36,6 @@
         </effect>
     </Label>
     <Button id="transparentButton" layoutX="629.0" layoutY="486.0" mnemonicParsing="false" onAction="#TestMonteCarlo" prefHeight="116.0" prefWidth="202.0" style="-fx-background-color: transparent;" stylesheets="@Style.css" />
+    <ImageView fx:id="bubble" fitHeight="150.0" fitWidth="200.0" layoutX="731.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+
 </AnchorPane>

@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.image.ImageView?>
 <AnchorPane id="testPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.MatrixMultiplicationController">
     <Slider id="slider" fx:id="slider1" layoutX="659.0" layoutY="291.0" majorTickUnit="50.0" max="450.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
     <Button id="transparentButton" layoutX="126.0" layoutY="522.0" mnemonicParsing="false" onAction="#goBack" prefHeight="116.0" prefWidth="202.0" style="-fx-background-color: transparent;" stylesheets="@Style.css" text="Go Back" textFill="WHITE">
@@ -29,4 +30,7 @@
             <Glow />
         </effect>
     </Label>
+    <ImageView fx:id="bubble" fitHeight="150.0" fitWidth="200.0" layoutX="343.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true" />
+
+
 </AnchorPane>
