@@ -47,7 +47,7 @@ public class RandomHDDController {
         test.initialize(fileSize);
         test.run(bufferSize);
         test.clean();
-        System.out.println(test.getResult());
-
+        //System.out.println(test.getResult());
+        scoreLabel.setText(test.getResult());
     }
 }

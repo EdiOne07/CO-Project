@@ -31,7 +31,7 @@ public class DigitsOfPiSceneController {
         Integer load = (int) (slider.getValue());
         test.run(load);
         //System.out.println("Finished in " + test.getTime() + " s");
-        scoreLabel.setText(test.getTime() + " s");
+        scoreLabel.setText(test.getScore() + "");
     }
     public void goBack(ActionEvent event) throws IOException {
         try{

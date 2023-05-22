@@ -32,8 +32,7 @@ public class TestMonteCarlo {
         time = timer.stop();
         timeInSeconds = timer.Convert("s", time);
         System.out.println("Finished in: " + timeInSeconds + " s");
-        score = load / timeInSeconds /100;
-        System.out.println("The score is:" + score);
+        score = (float) (load/ Math.sqrt(timeInSeconds)/70*2);
     }
     public float getTime(){
         return timeInSeconds;

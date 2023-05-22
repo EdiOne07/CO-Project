@@ -10,6 +10,7 @@ public class TestDigitsOfPi {
     private int load;
     private IBenchmark bench;
     private ITimer timer;
+    private int score;
 
     public TestDigitsOfPi(){
         bench = new DigitsOfPi();
@@ -29,6 +30,8 @@ public class TestDigitsOfPi {
         bench.run(this.load);
         time = timer.stop();
         timeInSeconds = timer.Convert("s", time);
+        score = (int)(load/ Math.sqrt(timeInSeconds)/50*3);
+
     }
     public float getTime(){
 
@@ -36,5 +39,8 @@ public class TestDigitsOfPi {
     }
     public int getLoad(){
         return load;
+    }
+    public int getScore(){
+        return score;
     }
 }
