@@ -23,7 +23,7 @@ public class TestMatrixMultiplication {
             bench = new MatrixMultiplication();
             timer = new Timer();
             bench.warmUp();
-            System.out.println("Finished warming up");
+            System.out.println("Finished warming up ");
 
      }
         public void run (int rowA, int colA, int colB, Integer b){
