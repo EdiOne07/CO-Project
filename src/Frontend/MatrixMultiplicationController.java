@@ -32,18 +32,42 @@ public class MatrixMultiplicationController {
     private Slider slider112;
     @FXML
     private Label scoreLabel;
+    @FXML
+    private ImageView bubble;
+
     public MatrixMultiplicationController(){
         test = new TestMatrixMultiplication();
 
     }
 
     public void TestMatrixMultiplication(ActionEvent event){
-        Integer rowA = (int) (slider1.getValue());
-        Integer colA = (int) (slider11.getValue());
-        Integer rowB = (int) (slider11.getValue());
-        Integer colB = (int) (slider112.getValue());
-        test.run(rowA,colA,rowB,colB);
-        scoreLabel.setText(test.getScore()+" "+"points");
+        String imagePath = "Frontend/Images/bubble.png";
+        String transparentPath = "Frontend/Images/transparent.png";
+
+        Image transparentImage = new Image(transparentPath);
+        Image image = new Image(imagePath);
+
+        bubble.setImage(image);
+
+        Task<Void> task = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+                Integer rowA = (int) (slider1.getValue());
+                Integer colA = (int) (slider11.getValue());
+                Integer rowB = (int) (slider11.getValue());
+                Integer colB = (int) (slider112.getValue());
+                test.run(rowA,colA,rowB,colB);
+                return null;
+            }
+        };
+
+        task.setOnSucceeded(e -> {
+            bubble.setImage(transparentImage);
+            scoreLabel.setText(test.getScore()+" "+"points");
+        });
+
+        new Thread(task).start();
+
 
     }
     public void goBack(ActionEvent event) throws IOException {
