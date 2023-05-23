@@ -48,7 +48,8 @@ public class TestMatrixMultiplication {
             double matrix_size=rowA*colB;
             System.out.println("The size of the new matrix is:"+ matrix_size);
             double scalingFactor = 10.0 * (matrix_size / 10000);
-            double  score=matrix_size / totalFloatingPointOperations / (timeInSeconds * availableProcessorCores)*10000.0;
+            //double  score=matrix_size / totalFloatingPointOperations / (timeInSeconds * availableProcessorCores)*10000.0;
+            double score=(Math.cbrt(totalFloatingPointOperations)/ (Math.sqrt(timeInSeconds) * availableProcessorCores))*2;
             System.out.println("The score is:"+score);
             score_final=(int)score;
             //score_final = (int) (Math.sqrt(rowA*rowB*colA*colB)/Math.sqrt(timeInSeconds)/10);
