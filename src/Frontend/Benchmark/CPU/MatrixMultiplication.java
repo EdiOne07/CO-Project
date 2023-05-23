@@ -77,9 +77,9 @@ public class MatrixMultiplication implements IBenchmark {
 
         // Ask the user for the dimensions of matrix B
         System.out.print("Enter the number of rows for matrix B: ");
-        int bRows = (Integer)params[2];
+        int bRows = (Integer)params[1];
         System.out.print("Enter the number of columns for matrix B: ");
-        int bCols = (Integer)params[3];
+        int bCols = (Integer)params[2];
 
         // Initialize matrices A and B
         double[][] matrixA = new double[aRows][aCols];

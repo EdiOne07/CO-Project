@@ -26,10 +26,10 @@ public class TestMatrixMultiplication {
             System.out.println("Finished warming up");
 
      }
-        public void run ( int rowA, int colA, int rowB, int colB){
+        public void run (int rowA, int colA, int colB, Integer b){
             this.rowA = rowA;
             this.colA = colA;
-            this.rowB = rowB;
+            this.rowB = colA;
             this.colB = colB;
 
             System.out.println("You choose the dimensions" + this.rowA + this.colA + this.rowB + this.colB);

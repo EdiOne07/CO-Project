@@ -40,7 +40,7 @@ public class MatrixMultiplicationController {
     public void TestMatrixMultiplication(ActionEvent event){
         Integer rowA = (int) (slider1.getValue());
         Integer colA = (int) (slider11.getValue());
-        Integer rowB = (int) (slider111.getValue());
+        Integer rowB = (int) (slider11.getValue());
         Integer colB = (int) (slider112.getValue());
         test.run(rowA,colA,rowB,colB);
         scoreLabel.setText(test.getScore()+" "+"points");
