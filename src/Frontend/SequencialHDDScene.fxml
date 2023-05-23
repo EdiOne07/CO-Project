@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="hddPane" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.SequencialHDDController">
+<AnchorPane id="hddPane" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.SequencialHDDController">
    <children>
       <Slider id="slider" fx:id="write_file_slider" blockIncrement="64.0" layoutX="698.0" layoutY="216.0" majorTickUnit="128.0" max="1024.0" min="128.0" minorTickCount="64" prefHeight="25.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
       <Slider id="slider" fx:id="write_buff_slider" blockIncrement="7.0" layoutX="698.0" layoutY="130.0" majorTickUnit="14.0" max="64.0" min="2.0" minorTickCount="7" prefHeight="25.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
-      <Label layoutX="717.0" layoutY="95.0" text="Buffer Size">
+      <Label layoutX="717.0" layoutY="95.0" text="Buffer Size (in KB)">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="717.0" layoutY="181.0" text="File size">
+      <Label layoutX="717.0" layoutY="181.0" text="File size (in MB)">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
@@ -25,14 +27,14 @@
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
       </Label>
-      <Slider id="slider" fx:id="read_nofile_slider" blockIncrement="1.0" layoutX="698.0" layoutY="470.0" majorTickUnit="2.0" max="10.0" min="2.0" minorTickCount="1" prefHeight="25.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+      <Slider id="slider" fx:id="read_nofile_slider" blockIncrement="1.0" layoutX="698.0" layoutY="563.0" majorTickUnit="2.0" max="10.0" min="2.0" minorTickCount="1" prefHeight="25.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
       <Slider id="slider" fx:id="read_szblock_slider" blockIncrement="64.0" layoutX="698.0" layoutY="384.0" majorTickUnit="128.0" max="1024.0" min="128.0" minorTickCount="64" prefHeight="25.0" prefWidth="275.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
-      <Label layoutX="717.0" layoutY="349.0" text="Block size">
+      <Label layoutX="717.0" layoutY="349.0" text="Block Size (in KB)">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="717.0" layoutY="435.0" text="Number of files">
+      <Label layoutX="717.0" layoutY="528.0" text="Number of files">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
@@ -53,8 +55,8 @@
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
       </Button>
-      <Slider id="slider" fx:id="read_noblock_slider" blockIncrement="250.0" layoutX="702.0" layoutY="566.0" majorTickUnit="500.0" max="2000.0" min="500.0" minorTickCount="250" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="826.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
-      <Label layoutX="717.0" layoutY="531.0" text="Number of blocks">
+      <Slider id="slider" fx:id="read_noblock_slider" blockIncrement="250.0" layoutX="698.0" layoutY="473.0" majorTickUnit="500.0" max="2000.0" min="500.0" minorTickCount="250" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="826.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+      <Label layoutX="713.0" layoutY="438.0" text="Number of blocks">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
