@@ -3,13 +3,40 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="systemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.SystemInfoController">
-      <Button layoutX="40.0" layoutY="549.0" mnemonicParsing="false" onAction="#goBack" prefHeight="118.0" prefWidth="168.0" rotate="8.1" stylesheets="@Style.css" />
-      <Label layoutX="72.0" layoutY="599.0" mouseTransparent="true" prefHeight="35.0" prefWidth="114.0" rotate="-5.2" text="Go back" textAlignment="CENTER" textFill="WHITE">
+<Pane id="systemPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.SystemInfoController">
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff76" height="454.0" layoutX="111.0" layoutY="74.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="699.0" />
+      <Button layoutX="33.0" layoutY="558.0" mnemonicParsing="false" onAction="#goBack" prefHeight="118.0" prefWidth="168.0" rotate="8.1" stylesheets="@Style.css" />
+      <Label layoutX="66.0" layoutY="600.0" mouseTransparent="true" prefHeight="35.0" prefWidth="114.0" rotate="-5.2" text="Go back" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </Label>
+   <Label fx:id="UserLabel" layoutX="142.0" layoutY="115.0" text="EY">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
+   <Label fx:id="OSLabel" layoutX="143.0" layoutY="169.0" text="EE">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
+   <Label fx:id="CPULabel" layoutX="143.0" layoutY="216.0" text="ED">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
+   <Label fx:id="RAMLabel" layoutX="142.0" layoutY="266.0" text="EED">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
+   <Label fx:id="HDDLabel" layoutX="143.0" layoutY="315.0" text="EEDA">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
 </Pane>
