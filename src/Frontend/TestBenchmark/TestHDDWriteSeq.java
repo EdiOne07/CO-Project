@@ -29,11 +29,6 @@ public class TestHDDWriteSeq {
         totalTime = timer.stop();
         bench.clean();
     }
-
-    public void getResult() {
-        System.out.println(bench.getResult());
-    }
-
     public int getScore() {
         double score = (double) (fileSize * bufferSize) / (totalTime);
         return (int) Math.abs(score);

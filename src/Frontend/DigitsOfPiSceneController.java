@@ -33,20 +33,6 @@ public class DigitsOfPiSceneController {
 
     }
 
-    /*public void TestDigitsOfPi(ActionEvent event){
-        String imagePath = "Frontend/Images/bubble.png";
-        String transparentPath = "Frontend/Images/transparent.png";
-        Image transparentImage = new Image(transparentPath);
-        Image image = new Image(imagePath);
-        bubble.setImage(image);
-        Integer load = (int) (slider.getValue());
-        test.run(load);
-        //System.out.println("Finished in " + test.getTime() + " s");
-        bubble.setImage(transparentImage);
-
-        scoreLabel.setText(test.getScore() + "");
-
-    }*/
     public void TestDigitsOfPi(ActionEvent event) {
         String imagePath = "Frontend/Images/bubble.png";
         String transparentPath = "Frontend/Images/transparent.png";
@@ -67,7 +53,7 @@ public class DigitsOfPiSceneController {
 
         task.setOnSucceeded(e -> {
             bubble.setImage(transparentImage);
-            scoreLabel.setText(""+test.getScore());
+            scoreLabel.setText(test.getScore()+" "+"points");
         });
 
         new Thread(task).start();

@@ -61,3 +61,11 @@
     -fx-background-color: #4ad7fe;
 }
 
+.info{
+    -fx-background-color: transparent;
+    -fx-graphic: url('Images/system_info.png');
+}
+#systemPane{
+    -fx-background-image: url('Images/SystemInfo.png');
+    -fx-background-size: 100%;
+}

@@ -16,15 +16,9 @@ public class TestDigitsOfPi {
         bench = new DigitsOfPi();
         timer = new Timer();
         bench.warmUp();
-        System.out.println("Finished warming up");
-
     }
     public void run(int load){
         this.load = load;
-
-        System.out.println("You choose the load "+ this.load);
-        System.out.println("Starting the test...");
-
         timer.start();
         timer.resume();
         bench.run(this.load);

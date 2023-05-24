@@ -42,5 +42,6 @@
               <Glow />
           </effect>
       </Label>
+      <Button layoutX="40.0" layoutY="593.0" mnemonicParsing="false" onAction="#goToSystem" prefHeight="36.0" prefWidth="29.0" styleClass="info" stylesheets="@Style.css" />
     </children>
 </Pane>

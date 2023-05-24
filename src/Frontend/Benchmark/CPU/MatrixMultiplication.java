@@ -70,15 +70,11 @@ public class MatrixMultiplication implements IBenchmark {
     public void run(Object... params) {
 
         // Ask the user for the dimensions of matrix A
-        System.out.print("Enter the number of rows for matrix A: ");
         int aRows = (Integer)params[0];
-        System.out.print("Enter the number of columns for matrix A: ");
         int aCols = (Integer)params[1];
 
         // Ask the user for the dimensions of matrix B
-        System.out.print("Enter the number of rows for matrix B: ");
         int bRows = (Integer)params[1];
-        System.out.print("Enter the number of columns for matrix B: ");
         int bCols = (Integer)params[2];
 
         // Initialize matrices A and B
@@ -100,16 +96,6 @@ public class MatrixMultiplication implements IBenchmark {
         // Perform matrix multiplication
         double[][] result = multiplyMatrices(matrixA, matrixB);
 
-
-        // Print the result
-        /*
-        System.out.println("Result:");
-        for (int i = 0; i < result.length; i++) {
-            for (int j = 0; j < result[0].length; j++) {
-                System.out.print(result[i][j] + " ");
-            }
-            System.out.println();
-        }*/
         matrixA=null;
         matrixB=null;
     }

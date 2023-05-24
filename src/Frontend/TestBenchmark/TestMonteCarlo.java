@@ -17,21 +17,15 @@ public class TestMonteCarlo {
         bench = new MonteCarloAlgorithm();
         timer = new Timer();
         bench.warmUp();
-        System.out.println("Finished warming up");
     }
 
     public void run(int load){
         this.load = load;
-
-        System.out.println("You choose the load "+ this.load);
-        System.out.println("Starting the test...");
-
         timer.start();
         timer.resume();
         bench.run(this.load);
         time = timer.stop();
         timeInSeconds = timer.Convert("s", time);
-        System.out.println("Finished in: " + timeInSeconds + " s");
         score = (int) (load*load/ Math.sqrt(timeInSeconds)/700000*2);
     }
     public float getTime(){
