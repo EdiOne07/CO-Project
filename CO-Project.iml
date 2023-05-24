@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="jdk" jdkName="19" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="javafx-sdk-20" level="project" />
+    <orderEntry type="library" exported="" name="javafx" level="project" />
     <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
