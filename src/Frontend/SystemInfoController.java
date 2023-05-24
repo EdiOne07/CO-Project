@@ -49,7 +49,6 @@ public class SystemInfoController {
         for (File root : roots) {
             long totalSpace = root.getTotalSpace();
             long freeSpace = root.getFreeSpace();
-            System.out.println(root.getPath() + " - Total Space: " + (totalSpace / (1024 * 1024 * 1024)) + " GB, Free Space: " + (freeSpace / (1024 * 1024 * 1024)) + " GB");
             hdd.append(root.getPath()).append(" - Total Space: ").append(totalSpace / (1024 * 1024 * 1024)).append(" GB\nFree Space: ").append(freeSpace / (1024 * 1024 * 1024)).append(" \n");
         }
 
@@ -124,31 +123,5 @@ public class SystemInfoController {
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
-
-    public SystemInfoController() {
-        //output = new TextArea();
-        // Get OS information
-        String os = System.getProperty("os.name") + " " + System.getProperty("os.version");
-        System.out.println("OS: " + os);
-        //output.append("OS:" + "\n");
-
-        // Get CPU information
-        String cpuModel = System.getenv("PROCESSOR_IDENTIFIER");
-        System.out.println("CPU Model: " + cpuModel);
-        //output.setText("CPU Model: " + cpuModel + "\n");
-
-        com.sun.management.OperatingSystemMXBean osBean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-        String architecture = osBean.getArch();
-        long availableProcessors = osBean.getAvailableProcessors();
-
-        System.out.println("Architecture: " + architecture);
-        System.out.println("Number of available processors: " + availableProcessors);
-
-        // Get RAM information
-
-
-        // Get HDD/SSD information
-
     }
 }
