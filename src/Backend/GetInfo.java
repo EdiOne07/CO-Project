@@ -1,6 +1,8 @@
 package Backend;
 
 
+import java.util.Arrays;
+
 public class GetInfo {
     protected String[] information= new String[7];
     protected String scoreDigitsOfPi="";
@@ -39,6 +41,13 @@ public class GetInfo {
         String v=Integer.toString(scoreHddWrite);
         this.scoreHddWrite = v;
         return this.information[4]=v;
+    }
+
+    @Override
+    public String toString() {
+        return "GetInfo{" +
+                "information=" + Arrays.toString(information) +
+                '}';
     }
 
     /*public void storeInfo(){

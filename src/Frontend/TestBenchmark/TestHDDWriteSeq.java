@@ -19,6 +19,7 @@ public class TestHDDWriteSeq {
     }
 
     public void run(long fileSize, int bufferSize) {
+        info=new GetInfo();
         this.fileSize = fileSize;
         this.bufferSize = bufferSize;
         timer.start();

@@ -29,6 +29,7 @@ public class TestRandomHDD {
     }
 
     public void run(int bufferSize) {
+        info=new GetInfo();
         this.bufferSize = bufferSize;
         timer.start();
         bench.run("w", "ft", bufferSize);

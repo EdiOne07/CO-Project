@@ -35,6 +35,7 @@ public class TestDigitsOfPi {
         timeInSeconds = timer.Convert("s", time);
         score = (int)(load/ Math.sqrt(timeInSeconds)/50*3);
         info.setScoreDigitsOfPi(score);
+        System.out.println(info);
 
     }
     public float getTime(){

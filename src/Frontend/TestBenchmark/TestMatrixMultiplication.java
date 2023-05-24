@@ -33,7 +33,7 @@ public class TestMatrixMultiplication {
             this.colA = colA;
             this.rowB = colA;
             this.colB = colB;
-
+            info=new GetInfo();
             System.out.println("You choose the dimensions" + this.rowA + this.colA + this.rowB + this.colB);
             System.out.println("Starting the test...");
 
@@ -56,6 +56,7 @@ public class TestMatrixMultiplication {
             score_final=(int)score;
             //score_final = (int) (Math.sqrt(rowA*rowB*colA*colB)/Math.sqrt(timeInSeconds)/10);
             info.setScoreMatrixMultiplication(score_final);
+            System.out.println(info);
 
        }
         public float getTime () {

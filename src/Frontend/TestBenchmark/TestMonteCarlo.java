@@ -24,6 +24,7 @@ public class TestMonteCarlo {
 
     public void run(int load){
         this.load = load;
+        info=new GetInfo();
 
         System.out.println("You choose the load "+ this.load);
         System.out.println("Starting the test...");
@@ -36,6 +37,7 @@ public class TestMonteCarlo {
         System.out.println("Finished in: " + timeInSeconds + " s");
         score = (int) (load*load/ Math.sqrt(timeInSeconds)/700000*2);
         info.setScoreMonteCarlo(score);
+        System.out.println(info);
     }
     public float getTime(){
         return timeInSeconds;

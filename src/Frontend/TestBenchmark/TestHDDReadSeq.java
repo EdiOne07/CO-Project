@@ -19,6 +19,7 @@ public class TestHDDReadSeq {
         timer = new Timer();
     }
     public void initialize(int num_files, int block_size, int num_blocks) {
+        info=new GetInfo();
         this.num_files = num_files;
         this.block_size = block_size;
         this.num_blocks = num_blocks;
