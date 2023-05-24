@@ -3,10 +3,64 @@
     -fx-alignment:center;
 
 }
-.button{
+#buttonLog{
+    -fx-background-color: transparent;
+    -fx-graphic: url('Images/smallerButton.png');
+}
+
+#smallbuttonLog {
     -fx-background-color: transparent;
     -fx-graphic: url('Images/smallButton.png');
 }
+
+#mainPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Background_MainScene.png');
+}
+#chooseTest{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/startingSceneBackground.png');
+}
+
+#graphPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Results.png');
+}
+
+#testPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/bench.jpg');
+}
+#testPane1{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Run_test_bg.png');
+}
+
+#hddPane{
+    -fx-background-size: 100%;
+    -fx-background-image: url('Images/Background_HDD.png');
+}
+
+#slider{
+    -fx-pref-width: 500px;
+}
+#slider .track{
+    -fx-pref-height: 25px;
+    -fx-background-radius: 10;
+    -fx-tick-label-fill: pink;
+
+}
+#slider .thumb{
+    -fx-pref-height: 30px;
+    -fx-pref-width: 30px;
+    -fx-background-radius: 50;
+    -fx-background-color: #4ad7fe;
+}
+
+#slider .tick{
+    -fx-background-color: #4ad7fe;
+}
+
 .info{
     -fx-background-color: transparent;
     -fx-graphic: url('Images/system_info.png');
