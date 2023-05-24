@@ -44,6 +44,27 @@
 #slider{
     -fx-pref-width: 500px;
 }
+
+#smallslider {
+    -fx-pref-width: 400px;
+}
+
+#smallslider .track{
+    -fx-pref-height: 25px;
+    -fx-background-radius: 10;
+    -fx-tick-label-fill: pink;
+
+}
+#smallslider .thumb{
+    -fx-pref-height: 30px;
+    -fx-pref-width: 30px;
+    -fx-background-radius: 50;
+    -fx-background-color: #4ad7fe;
+}
+
+#smallslider .tick{
+    -fx-background-color: #4ad7fe;
+}
 #slider .track{
     -fx-pref-height: 25px;
     -fx-background-radius: 10;
