@@ -7,6 +7,7 @@ import Frontend.Timing.Timer;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import Backend.GetInfo;
 
 public class TestRandomHDD {
     private IBenchmark bench;
@@ -15,6 +16,7 @@ public class TestRandomHDD {
     private int bufferSize;
     private long totalTime;
     private StringBuilder result;
+    private GetInfo info;
     public TestRandomHDD() {
         bench = new HDDRandomAccess();
         result = new StringBuilder();
@@ -54,6 +56,7 @@ public class TestRandomHDD {
         NumberFormat nf = new DecimalFormat("#.00");
         System.out.println(result);
         double score = (double) ((fileSize * bufferSize) / (totalTime*10));
+        info.setScoreRandomAcces((int)score);
         return  Integer.valueOf((int) score).toString();
     }
 }

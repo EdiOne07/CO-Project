@@ -4,13 +4,14 @@ import Frontend.Benchmark.HDD.HDDWriteBenchmark;
 import Frontend.Benchmark.IBenchmark;
 import Frontend.Timing.ITimer;
 import Frontend.Timing.Timer;
-
+import Backend.GetInfo;
 public class TestHDDWriteSeq {
     private IBenchmark bench;
     private ITimer timer;
     private long totalTime;
     private long fileSize;
     private int bufferSize;
+    private GetInfo info;
     public TestHDDWriteSeq() {
         bench = new HDDWriteBenchmark();
         timer = new Timer();
@@ -36,6 +37,7 @@ public class TestHDDWriteSeq {
 
     public int getScore() {
         double score = (double) (fileSize * bufferSize) / (totalTime);
+        info.setScoreHddWrite((int)score);
         return (int) Math.abs(score);
     }
 }

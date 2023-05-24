@@ -4,6 +4,7 @@ import Frontend.Benchmark.CPU.MonteCarloAlgorithm;
 import Frontend.Benchmark.IBenchmark;
 import Frontend.Timing.ITimer;
 import Frontend.Timing.Timer;
+import Backend.GetInfo;
 
 public class TestMonteCarlo {
     private long time;
@@ -12,6 +13,7 @@ public class TestMonteCarlo {
     private int score;
     private IBenchmark bench;
     private ITimer timer;
+    private GetInfo info;
 
     public TestMonteCarlo(){
         bench = new MonteCarloAlgorithm();
@@ -33,6 +35,7 @@ public class TestMonteCarlo {
         timeInSeconds = timer.Convert("s", time);
         System.out.println("Finished in: " + timeInSeconds + " s");
         score = (int) (load*load/ Math.sqrt(timeInSeconds)/700000*2);
+        info.setScoreMonteCarlo(score);
     }
     public float getTime(){
         return timeInSeconds;

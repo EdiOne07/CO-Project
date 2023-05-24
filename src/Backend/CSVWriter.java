@@ -2,23 +2,18 @@ package Backend;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.File;
+import java.util.Arrays;
+
+import Frontend.TestBenchmark.TestDigitsOfPi;
+import Backend.GetInfo;
 public class CSVWriter {
-    public static void main(String[] args){
-        String csvfile="test.csv";
-        FileWriter writer=null;
+    private String csvPath="test.csv";
+    private FileWriter writer=null;
+    private GetInfo info;
+    /*public void createCSV(){
         try{
-            File file=new File(csvfile);
-            writer=new FileWriter(csvfile,true);
-            if(file.length()==0){
-                    writer.append("Hazt");
-                    writer.append(",");
-                    writer.append("John");
-            }
-            writer.append("\n");
-            for(int i=0;i<10;i++){
-                writer.append("Dorian");
-                writer.append(",");
-            }
+            File file=new File(csvPath);
+            writer=new FileWriter(csvPath,true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -29,6 +24,17 @@ public class CSVWriter {
             } catch (IOException e) {
                System.out.println("Couldn't close");
             }
+        }
+    }
+*/
+    public CSVWriter(){
+        info=new GetInfo();
+       // info.storeInfo();
+        String[] information = info.getInfo();
+        try (FileWriter writer = new FileWriter(csvPath)) {
+                writer.write(Arrays.toString(information));// Write the CSV line to the file
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

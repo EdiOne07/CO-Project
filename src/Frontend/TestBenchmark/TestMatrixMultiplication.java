@@ -6,6 +6,7 @@ import Frontend.Timing.ITimer;
 import Frontend.Timing.Timer;
 
 import static java.lang.Math.abs;
+import Backend.GetInfo;
 
 public class TestMatrixMultiplication {
 
@@ -18,6 +19,7 @@ public class TestMatrixMultiplication {
          IBenchmark bench;
          ITimer timer;
          int score_final;
+         private GetInfo info;
 
     public TestMatrixMultiplication() {
             bench = new MatrixMultiplication();
@@ -53,6 +55,7 @@ public class TestMatrixMultiplication {
             System.out.println("The score is:"+score);
             score_final=(int)score;
             //score_final = (int) (Math.sqrt(rowA*rowB*colA*colB)/Math.sqrt(timeInSeconds)/10);
+            info.setScoreMatrixMultiplication(score_final);
 
        }
         public float getTime () {
@@ -60,6 +63,6 @@ public class TestMatrixMultiplication {
             return timeInSeconds;
         }
         public int getScore(){
-            return score_final;
+        return score_final;
         }
 }

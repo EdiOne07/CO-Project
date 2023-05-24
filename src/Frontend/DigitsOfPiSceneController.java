@@ -15,7 +15,11 @@ import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import Backend.CSVWriter;
+
 
 public class DigitsOfPiSceneController {
     @FXML
@@ -26,6 +30,7 @@ public class DigitsOfPiSceneController {
     private Stage stage;
     private Scene scene;
     private Parent layout;
+    private CSVWriter csv;
     @FXML
     private Slider slider;
     public DigitsOfPiSceneController(){
@@ -53,6 +58,7 @@ public class DigitsOfPiSceneController {
 
         Image transparentImage = new Image(transparentPath);
         Image image = new Image(imagePath);
+        csv=new CSVWriter();
 
         bubble.setImage(image);
 
@@ -69,8 +75,8 @@ public class DigitsOfPiSceneController {
             bubble.setImage(transparentImage);
             scoreLabel.setText(""+test.getScore());
         });
-
         new Thread(task).start();
+
     }
 
 

@@ -4,6 +4,7 @@ import Frontend.Benchmark.HDD.HDDReadingBenchmark;
 import Frontend.Benchmark.IBenchmark;
 import Frontend.Timing.ITimer;
 import Frontend.Timing.Timer;
+import Backend.GetInfo;
 
 public class TestHDDReadSeq {
     private IBenchmark bench;
@@ -12,6 +13,7 @@ public class TestHDDReadSeq {
     private int block_size;
     private int num_blocks;
     private long totalTime;
+    private GetInfo info;
     public TestHDDReadSeq() {
         bench = new HDDReadingBenchmark();
         timer = new Timer();
@@ -37,6 +39,7 @@ public class TestHDDReadSeq {
     }
     public int getScore() {
         double score = (double) (1000 * (num_blocks * block_size)) / (totalTime);
+        info.setScoreHddWrite((int)score);
         return (int) Math.abs(score);
     }
 }
