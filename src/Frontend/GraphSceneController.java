@@ -1,6 +1,7 @@
 package Frontend;
 
 import Frontend.Graph.Graph;
+import com.sun.javafx.collections.ObservableListWrapper;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,8 +18,10 @@ import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class GraphSceneController implements Initializable{
@@ -49,51 +52,51 @@ public class GraphSceneController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
-                "Gauss-Legendre", "Matrix Multiplication", "Monte Carlo", "Read/Write Memory","Read/Write Memory Random")));
+               "Read/Write Memory Random", "Read/Write Memory" , "Gauss-Legendre","Monte Carlo", "Matrix Multiplication")));
         xAxis.setLabel("Tests");
         yAxis.setLabel("Score");
         XYChart.setTitle("Comparison between tests");
-        XYChart.Series series1 = new XYChart.Series<>();
 
-        series1.setName("Fiat");
-        series1.getData().add(new XYChart.Data<>("Gauss-Legendre", 12.0));
-        series1.getData().add(new XYChart.Data<>("Matrix Multiplication", 343.0));
-        series1.getData().add(new XYChart.Data<>("Monte Carlo", 52.0));
-        series1.getData().add(new XYChart.Data<>("Read/Write Memory", 65.0));
-        series1.getData().add(new XYChart.Data<>("Read/Write Memory Random", 65.0));
+        XYChart.Series series1 = new XYChart.Series<>();
+        series1.setName("AMD Ryzen 7 4800H");
+        series1.getData().add(new XYChart.Data<>("Gauss-Legendre", 129.0));
+        series1.getData().add(new XYChart.Data<>("Matrix Multiplication", 60.0));
+        series1.getData().add(new XYChart.Data<>("Monte Carlo", 434.0));
+        series1.getData().add(new XYChart.Data<>("Read/Write Memory", 450.0));
+        series1.getData().add(new XYChart.Data<>("Read/Write Memory Random", 535.0));
 
         XYChart.Series<String, Number> series2 = new XYChart.Series<>();
-        series2.setName("Audi");
-        series2.getData().add(new XYChart.Data<>("Gauss-Legendre", 55.0));
-        series2.getData().add(new XYChart.Data<>("Matrix Multiplication", 6.0));
-        series2.getData().add(new XYChart.Data<>("Monte Carlo", 130.0));
-        series2.getData().add(new XYChart.Data<>("Read/Write Memory", 43.0));
-        series2.getData().add(new XYChart.Data<>("Read/Write Memory Random", 65.0));
+        series2.setName("Intel Core i5-8257U");
+        series2.getData().add(new XYChart.Data<>("Gauss-Legendre", 125.0));
+        series2.getData().add(new XYChart.Data<>("Matrix Multiplication", 12.0));
+        series2.getData().add(new XYChart.Data<>("Monte Carlo", 291.0));
+        series2.getData().add(new XYChart.Data<>("Read/Write Memory", 400.0));
+        series2.getData().add(new XYChart.Data<>("Read/Write Memory Random", 409.0));
 
         XYChart.Series<String, Number> series3 = new XYChart.Series<>();
-        series3.setName("Ford");
-        series3.getData().add(new XYChart.Data<>("Gauss-Legendre", 41.0));
-        series3.getData().add(new XYChart.Data<>("Matrix Multiplication", 223.0));
-        series3.getData().add(new XYChart.Data<>("Monte Carlo", 365.0));
-        series3.getData().add(new XYChart.Data<>("Read/Write Memory", 66.0));
-        series3.getData().add(new XYChart.Data<>("Read/Write Memory Random", 65.0));
+        series3.setName("AMD Ryzen 5 5600H");
+        series3.getData().add(new XYChart.Data<>("Gauss-Legendre", 142.0));
+        series3.getData().add(new XYChart.Data<>("Matrix Multiplication", 52.0));
+        series3.getData().add(new XYChart.Data<>("Monte Carlo", 482.0));
+        series3.getData().add(new XYChart.Data<>("Read/Write Memory", 500.0));
+        series3.getData().add(new XYChart.Data<>("Read/Write Memory Random", 674.0));
 
         XYChart.Series<String, Number> series4 = new XYChart.Series<>();
-        series4.setName("Megan");
-        series4.getData().add(new XYChart.Data<>("Gauss-Legendre", 41.0));
-        series4.getData().add(new XYChart.Data<>("Matrix Multiplication", 223.0));
-        series4.getData().add(new XYChart.Data<>("Monte Carlo", 65.0));
-        series4.getData().add(new XYChart.Data<>("Read/Write Memory", 66.0));
-        series4.getData().add(new XYChart.Data<>("Read/Write Memory Random", 65.0));
+        series4.setName("AMD Ryzen 7 5800H");
+        series4.getData().add(new XYChart.Data<>("Gauss-Legendre", 137.0));
+        series4.getData().add(new XYChart.Data<>("Matrix Multiplication", 192.0));
+        series4.getData().add(new XYChart.Data<>("Monte Carlo", 469.0));
+        series4.getData().add(new XYChart.Data<>("Read/Write Memory", 300.0));
+        series4.getData().add(new XYChart.Data<>("Read/Write Memory Random", 674.0));
 
         XYChart.Series<String, Number> series5 = new XYChart.Series<>();
-        series5.setName("Dacie");
-        series5.getData().add(new XYChart.Data<>("Gauss-Legendre", 41.0));
-        series5.getData().add(new XYChart.Data<>("Matrix Multiplication", 22.0));
-        series5.getData().add(new XYChart.Data<>("Monte Carlo", 65.0));
-        series5.getData().add(new XYChart.Data<>("Read/Write Memory", 656.0));
-        series5.getData().add(new XYChart.Data<>("Read/Write Memory Random", 65.0));
+        series5.setName("AMD Ryzen 5 5500");
+        series5.getData().add(new XYChart.Data<>("Gauss-Legendre", 165.0));
+        series5.getData().add(new XYChart.Data<>("Matrix Multiplication", 185.0));
+        series5.getData().add(new XYChart.Data<>("Monte Carlo", 207.0));
+        series5.getData().add(new XYChart.Data<>("Read/Write Memory", 350.0));
+        series5.getData().add(new XYChart.Data<>("Read/Write Memory Random", 151.0));
 
-        XYChart.getData().addAll(series1, series2, series3, series4, series5);
+        XYChart.getData().addAll(series4, series1, series3, series2, series5);
     }
 }

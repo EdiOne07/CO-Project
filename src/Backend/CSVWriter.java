@@ -7,7 +7,7 @@ import java.util.Arrays;
 import Frontend.TestBenchmark.TestDigitsOfPi;
 import Backend.GetInfo;
 public class CSVWriter {
-    private String csvPath="test.csv";
+    private String csvPath="Test3.csv";
     private FileWriter writer=null;
     private GetInfo info;
     /*public void createCSV(){
