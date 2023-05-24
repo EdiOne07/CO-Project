@@ -52,7 +52,7 @@ public class MonteCarloSceneController {
 
         task.setOnSucceeded(e -> {
             bubble.setImage(transparentImage);
-            scoreLabel.setText(String.valueOf(test.getScore()));
+            scoreLabel.setText(String.valueOf(test.getScore()+" points"));
 
         });
 

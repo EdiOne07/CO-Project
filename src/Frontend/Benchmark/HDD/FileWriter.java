@@ -40,7 +40,6 @@ public class FileWriter {
 			int minIndex, int maxIndex, long fileSize, boolean clean)
 			throws IOException {
 
-		System.out.println("Stream write benchmark with fixed file size");
 		int currentBufferSize = MIN_BUFFER_SIZE;
 		String fileName;
 		int fileIndex = 0;
@@ -79,7 +78,6 @@ public class FileWriter {
 
 
 		int fileIndex = 0;
-		System.out.println("Stream write benchmark with fixed buffer size");
 		long currentFileSize = MIN_FILE_SIZE;
 		
 		while (currentFileSize <= MAX_FILE_SIZE
