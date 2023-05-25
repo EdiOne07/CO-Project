@@ -42,5 +42,7 @@
               <Glow />
           </effect>
       </Label>
+        <Button layoutX="38.0" layoutY="149.0" mnemonicParsing="false" onAction="#testCSV" prefHeight="120.0" prefWidth="182.0" text="TRY CSV" />
+
     </children>
 </Pane>

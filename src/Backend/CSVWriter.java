@@ -28,13 +28,13 @@ public class CSVWriter {
     }
 */
     public CSVWriter(){
-        info=new GetInfo();
+        /*info=new GetInfo();
        // info.storeInfo();
         String[] information = info.getInfo();
         try (FileWriter writer = new FileWriter(csvPath)) {
                 writer.write(Arrays.toString(information));// Write the CSV line to the file
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 }

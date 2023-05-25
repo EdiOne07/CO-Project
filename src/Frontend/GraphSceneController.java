@@ -20,9 +20,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.ResourceBundle;
+import java.util.*;
+
+import static java.util.Map.entry;
 
 public class GraphSceneController implements Initializable{
     private Stage stage;
@@ -34,6 +34,8 @@ public class GraphSceneController implements Initializable{
     private CategoryAxis xAxis;
     @FXML
     private BarChart<String, Number> XYChart;
+    private HashMap<String, Integer> infoHash;
+    private CSVWriter csvWriter = new CSVWriter();
 
     public void goBack(ActionEvent event) throws IOException {
         try{
@@ -48,6 +50,7 @@ public class GraphSceneController implements Initializable{
             e.printStackTrace();
         }
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -97,6 +100,14 @@ public class GraphSceneController implements Initializable{
         series5.getData().add(new XYChart.Data<>("Read/Write Memory", 350.0));
         series5.getData().add(new XYChart.Data<>("Read/Write Memory Random", 151.0));
 
-        XYChart.getData().addAll(series4, series1, series3, series2, series5);
+        XYChart.Series<String, Number> user = new XYChart.Series<>();
+        user.setName("YOUR RESULTS");
+        user.getData().add(new XYChart.Data<>("Gauss-Legendre",infoHash.get("Gauss-Legendre")));
+        user.getData().add(new XYChart.Data<>("Matrix Multiplication", infoHash.get("Matrix Multiplication")));
+        user.getData().add(new XYChart.Data<>("Monte Carlo", infoHash.get("Monte Carlo")));
+        user.getData().add(new XYChart.Data<>("Read/Write Memory", infoHash.get("Read/Write Memory")));
+        user.getData().add(new XYChart.Data<>("Read/Write Memory Random", infoHash.get("Read/Write Memory Random")));
+
+        XYChart.getData().addAll(series1, series2, series3, series5, series4, user);
     }
 }

@@ -1,6 +1,8 @@
 package Frontend;
 
+import Backend.CSVWriter;
 import Frontend.TestBenchmark.TestMonteCarlo;
+import com.sun.javafx.collections.ObservableMapWrapper;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class MonteCarloSceneController {
     @FXML
@@ -27,6 +30,8 @@ public class MonteCarloSceneController {
     private Parent layout;
     @FXML
     private Slider slider;
+    private Integer load;
+
     public MonteCarloSceneController(){
         test = new TestMonteCarlo();
 
@@ -40,11 +45,11 @@ public class MonteCarloSceneController {
         Image image = new Image(imagePath);
 
         bubble.setImage(image);
+        load = (int) (slider.getValue());
 
         Task<Void> task = new Task<>() {
             @Override
             protected Void call() throws Exception {
-                Integer load = (int) (slider.getValue());
                 test.run(load);
                 return null;
             }
@@ -53,7 +58,12 @@ public class MonteCarloSceneController {
         task.setOnSucceeded(e -> {
             bubble.setImage(transparentImage);
             scoreLabel.setText(String.valueOf(test.getScore()));
-
+            if(load == 1000){
+                CSVWriter csvWriter = new CSVWriter();
+                HashMap<String, Integer> infoHash = new HashMap<>();
+                infoHash.put("Monte Carlo", test.getScore());
+                csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
+            }
         });
 
         new Thread(task).start();

@@ -4,63 +4,72 @@ package Backend;
 import java.util.Arrays;
 
 public class GetInfo {
-    protected String[] information= new String[7];
-    protected String scoreDigitsOfPi="";
-    protected String scoreMatrixMultiplication="";
-    protected String scoreMonteCarlo="";
-    protected String scoreRandomAcces="";
-    protected String scoreHddWrite="";
+    private HashMap<String, Integer> information;
+    private int scoreDigitsOfPi;
+    private int scoreMatrixMultiplication;
+    private int scoreMonteCarlo;
+    private int scoreRandomAcces;
+    private int scoreHddWrite;
+
+    public GetInfo() {
+        this.information = new HashMap<>();
+        this.scoreDigitsOfPi = 0;
+        this.scoreMatrixMultiplication = 0;
+        this.scoreMonteCarlo = 0;
+        this.scoreRandomAcces = 0;
+        this.scoreHddWrite = 0;
+        information.put("Monte Carlo",0);
+        information.put("Gauss-Legendre", 0);
+        information.put("Matrix Multiplication", 0);
+        information.put("Read/Write Memory", 0);
+        information.put("Read/Write Memory Random", 0);
+    }
+
+    public void setInformation(String test, Integer score) {
+       information.put(test, score);
+    }
+
+    public int getScoreDigitsOfPi() {
+        return scoreDigitsOfPi;
+    }
 
     public void setScoreDigitsOfPi(int scoreDigitsOfPi) {
-        String v=Integer.toString(scoreDigitsOfPi);
-        this.scoreDigitsOfPi = v;
-        this.information[0]=v;
-        System.out.println("Test:"+ information[0]);
+        this.scoreDigitsOfPi = scoreDigitsOfPi;
     }
 
-    public String setScoreMatrixMultiplication(int scoreMatrixMultiplication) {
-        String v=Integer.toString(scoreMatrixMultiplication);
-        this.scoreMatrixMultiplication = v;
-       return this.information[1]=v;
+    public int getScoreMatrixMultiplication() {
+        return scoreMatrixMultiplication;
     }
 
-    public String setScoreMonteCarlo(int scoreMonteCarlo) {
-        String v=Integer.toString(scoreMonteCarlo);
-        this.scoreMonteCarlo = v;
-        return information[2]=v;
+    public void setScoreMatrixMultiplication(int scoreMatrixMultiplication) {
+        this.scoreMatrixMultiplication = scoreMatrixMultiplication;
     }
 
-    public String setScoreRandomAcces(int scoreRandomAcces) {
-        String v=Integer.toString(scoreRandomAcces);
-        this.scoreRandomAcces = v;
-        return this.information[3]=v;
-
+    public int getScoreMonteCarlo() {
+        return scoreMonteCarlo;
     }
 
-    public String setScoreHddWrite(int scoreHddWrite) {
-        String v=Integer.toString(scoreHddWrite);
-        this.scoreHddWrite = v;
-        return this.information[4]=v;
+    public void setScoreMonteCarlo(int scoreMonteCarlo) {
+        this.scoreMonteCarlo = scoreMonteCarlo;
     }
 
-    @Override
-    public String toString() {
-        return "GetInfo{" +
-                "information=" + Arrays.toString(information) +
-                '}';
+    public int getScoreRandomAcces() {
+        return scoreRandomAcces;
     }
 
-    /*public void storeInfo(){
-        information[0]=scoreDigitsOfPi;
-        System.out.println("Problem here??:"+ information[0]);
-        information[1]=scoreMatrixMultiplication;
-        information[2]=scoreMonteCarlo;
-        information[3]=scoreHddWrite;
-        information[4]=scoreRandomAcces;
+    public void setScoreRandomAcces(int scoreRandomAcces) {
+        this.scoreRandomAcces = scoreRandomAcces;
+    }
 
-    }*/
+    public int getScoreHddWrite() {
+        return scoreHddWrite;
+    }
 
-    public String[] getInfo(){
-        return this.information;
+    public void setScoreHddWrite(int scoreHddWrite) {
+        this.scoreHddWrite = scoreHddWrite;
+    }
+
+    public HashMap<String, Integer> getInformation() {
+        return information;
     }
 }

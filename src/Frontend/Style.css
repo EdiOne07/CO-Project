@@ -24,7 +24,7 @@
 
 #graphPane{
     -fx-background-size: 100%;
-    -fx-background-image: url('Images/Results.png');
+    -fx-background-image: url('Images/graphBackground.jpeg');
 }
 
 #testPane{
@@ -61,3 +61,6 @@
     -fx-background-color: #4ad7fe;
 }
 
+#frame{
+    -fx-opacity: 50%;
+}
