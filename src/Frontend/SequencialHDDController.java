@@ -1,5 +1,6 @@
 package Frontend;
 
+import Backend.CSVWriter;
 import Frontend.TestBenchmark.TestHDDReadSeq;
 import Frontend.TestBenchmark.TestHDDWriteSeq;
 import javafx.concurrent.Task;
@@ -18,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.HashMap;
 
 public class SequencialHDDController {
     @FXML
@@ -39,6 +41,11 @@ public class SequencialHDDController {
     private Slider read_szblock_slider;
     @FXML
     private Slider read_noblock_slider;
+    private int num_files;
+    private int num_blocks;
+    private int block_size;
+    private long fileSize;
+    private int bufferSize;
 
     public void goBack(ActionEvent event) throws IOException {
         try{
@@ -64,20 +71,20 @@ public class SequencialHDDController {
 
         Image transparentImage = new Image(transparentPath);
         Image image = new Image(imagePath);
-
+        int num_files = (int) (read_nofile_slider.getValue());
+        int num_blocks = (int) (read_noblock_slider.getValue());
+        int block_size = (int) (read_szblock_slider.getValue());
+        long fileSize = (long) (write_file_slider.getValue())*1024*1024;
+        int bufferSize = (int) (write_buff_slider.getValue());
         bubble.setImage(image);
 
-        Task<Void> task = new Task<>() {
+        Task<Void> task     = new Task<>() {
             @Override
             protected Void call() throws Exception {
-                int num_files = (int) (read_nofile_slider.getValue());
-                int num_blocks = (int) (read_noblock_slider.getValue());
-                int block_size = (int) (read_szblock_slider.getValue());
-                long fileSize = (long) (write_file_slider.getValue())*1024*1024;
-                int bufferSize = (int) (write_buff_slider.getValue());
                 test1.initialize(num_files, block_size, num_blocks);
                 test1.run();
                 test2.run(fileSize, bufferSize);
+
                 return null;
             }
         };
@@ -89,6 +96,13 @@ public class SequencialHDDController {
             test1.clean();
             int score = 100*(test1.getScore() + test2.getScore()) / 2;
             scoreLabel.setText(score+ " points");
+            System.out.println( num_files + " " +  num_blocks + " " + block_size + " " + fileSize + " " + bufferSize);
+            if(num_files == 10 && num_blocks==2000 && block_size==1024 && fileSize ==1024*1024*1024 && bufferSize==63){
+                CSVWriter csvWriter = new CSVWriter();
+                HashMap<String, Integer> infoHash = new HashMap<>();
+                infoHash.put("Read/Write Memory", score);
+                csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
+            }
 
         });
 

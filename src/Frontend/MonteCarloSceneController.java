@@ -58,7 +58,7 @@ public class MonteCarloSceneController {
         task.setOnSucceeded(e -> {
             bubble.setImage(transparentImage);
             scoreLabel.setText(String.valueOf(test.getScore()));
-            if(load == 1000){
+            if(load == 20000){
                 CSVWriter csvWriter = new CSVWriter();
                 HashMap<String, Integer> infoHash = new HashMap<>();
                 infoHash.put("Monte Carlo", test.getScore());
