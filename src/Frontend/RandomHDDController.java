@@ -31,7 +31,7 @@ public class RandomHDDController {
     private Slider fileSize_slider;
     @FXML
     private Slider bufferSize_slider;
-    private Long fileSize;
+    private long fileSize;
     private Integer bufferSize;
     public RandomHDDController() {
         test = new TestRandomHDD();
@@ -75,7 +75,7 @@ public class RandomHDDController {
             test.clean();
             String score = test.getResult();
             scoreLabel.setText(score + " " + "points");
-            if(fileSize == 256*1024*1024 && bufferSize == 1*1024) {
+            if(fileSize_slider.getValue()==4096 && bufferSize == 16384) {
                 CSVWriter csvWriter = new CSVWriter();
                 HashMap<String, Integer> infoHash = new HashMap<>();
                 infoHash.put("Read/Write Memory Random", Integer.valueOf(test.getResult()));

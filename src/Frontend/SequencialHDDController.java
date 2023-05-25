@@ -41,11 +41,6 @@ public class SequencialHDDController {
     private Slider read_szblock_slider;
     @FXML
     private Slider read_noblock_slider;
-    private int num_files;
-    private int num_blocks;
-    private int block_size;
-    private long fileSize;
-    private int bufferSize;
 
     public void goBack(ActionEvent event) throws IOException {
         try{
