@@ -2,6 +2,7 @@ package Backend;
 
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class GetInfo {
     private HashMap<String, Integer> information;

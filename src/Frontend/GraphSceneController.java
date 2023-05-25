@@ -1,6 +1,7 @@
 package Frontend;
 
-import Frontend.Graph.Graph;
+import Backend.CSVWriter;
+import Backend.GetInfo;
 import com.sun.javafx.collections.ObservableListWrapper;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
