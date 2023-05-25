@@ -34,26 +34,49 @@ public class MatrixMultiplicationController {
     private Slider slider112;
     @FXML
     private Label scoreLabel;
+    @FXML
+    private ImageView bubble;
+
     public MatrixMultiplicationController(){
         test = new TestMatrixMultiplication();
 
     }
 
     public void TestMatrixMultiplication(ActionEvent event){
+        String imagePath = "Frontend/Images/bubble.png";
+        String transparentPath = "Frontend/Images/transparent.png";
+
+        Image transparentImage = new Image(transparentPath);
+        Image image = new Image(imagePath);
         Integer rowA = (int) (slider1.getValue());
         Integer colA = (int) (slider11.getValue());
         Integer rowB = (int) (slider11.getValue());
         Integer colB = (int) (slider112.getValue());
-        test.run(rowA,colA,rowB,colB);
-        scoreLabel.setText(test.getScore()+" "+"points");
-        //if(rowA == 2000 && colA == 2000 && colB == 2000)  {
-        if(rowA == 450 && colA == 450 && colB == 450)  {
+        bubble.setImage(image);
 
-        CSVWriter csvWriter = new CSVWriter();
-            HashMap<String, Integer> infoHash = new HashMap<>();
-            infoHash.put("Matrix Multiplication", test.getScore());
-            csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
-        }
+        Task<Void> task = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+
+                test.run(rowA,colA,rowB,colB);
+                return null;
+            }
+        };
+
+        task.setOnSucceeded(e -> {
+            bubble.setImage(transparentImage);
+            scoreLabel.setText(test.getScore()+" "+"points");
+            if(rowA == 2000 && colA == 2000 && colB == 2000)  {
+
+                CSVWriter csvWriter = new CSVWriter();
+                HashMap<String, Integer> infoHash = new HashMap<>();
+                infoHash.put("Matrix Multiplication", test.getScore());
+                csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
+            }
+        });
+
+        new Thread(task).start();
+
 
     }
     public void goBack(ActionEvent event) throws IOException {

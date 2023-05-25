@@ -91,8 +91,6 @@ public class SequencialHDDController {
 
         task.setOnSucceeded(e -> {
             bubble.setImage(transparentImage);
-            test1.getResult();
-            test2.getResult();
             test1.clean();
             int score = 100*(test1.getScore() + test2.getScore()) / 2;
             scoreLabel.setText(score+ " points");

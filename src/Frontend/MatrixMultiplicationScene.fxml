@@ -4,17 +4,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="testPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.MatrixMultiplicationController">
-    <Slider id="slider" fx:id="slider1" layoutX="659.0" layoutY="291.0" majorTickUnit="50.0" max="450.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+    <Slider id="smallslider" fx:id="slider1" layoutX="746.0" layoutY="294.0" majorTickUnit="50.0" max="2000.0" min="500.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
     <Button id="transparentButton" layoutX="126.0" layoutY="522.0" mnemonicParsing="false" onAction="#goBack" prefHeight="116.0" prefWidth="202.0" style="-fx-background-color: transparent;" stylesheets="@Style.css" text="Go Back" textFill="WHITE">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="30.0" />
       </font></Button>
-   <Slider id="slider" fx:id="slider11" layoutX="666.0" layoutY="339.0" majorTickUnit="50.0" max="450.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
-   <Slider id="slider" fx:id="slider112" layoutX="650.0" layoutY="484.0" majorTickUnit="50.0" max="450.0" min="100.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+   <Slider id="smallslider" fx:id="slider11" layoutX="746.0" layoutY="348.0" majorTickUnit="50.0" max="2000.0" min="500.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
    <Button layoutX="872.0" layoutY="605.0" mnemonicParsing="false" onAction="#TestMatrixMultiplication" style="-fx-background-color: transparent;" stylesheets="@Style.css" text="Run" textFill="WHITE">
       <font>
          <Font name="Berlin Sans FB Demi Bold" size="24.0" />
@@ -28,6 +28,40 @@
             <Glow />
         </effect>
     </Label>
+    <ImageView fx:id="bubble" fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true" />
+   <Slider id="smallslider" fx:id="slider112" layoutX="747.0" layoutY="511.0" majorTickUnit="50.0" max="2000.0" min="500.0" minorTickCount="5" prefHeight="77.0" prefWidth="358.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@Style.css" />
+   <Label layoutX="674.0" layoutY="240.0" text="Matrix A">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
+   <Label layoutX="674.0" layoutY="421.0" text="Matrix B">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+      </font>
+   </Label>
+   <Label layoutX="658.0" layoutY="309.0" text="Row A">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="658.0" layoutY="358.0" text="Col A">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="659.0" layoutY="524.0" text="Col B">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="24.0" />
+      </font>
+   </Label>
+   <Label layoutX="658.0" layoutY="484.0" text="*Row B is the same as Col A*">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+      </font>
+   </Label>
+
+
 
 
 </AnchorPane>

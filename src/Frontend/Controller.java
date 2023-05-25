@@ -72,6 +72,20 @@ public class Controller {
                 entry("Read/Write Memory Random", 0)
         ));
         csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
-
     }
+
+    public void goToSystem(ActionEvent event) throws IOException {
+        try {
+            Parent layout = FXMLLoader.load(getClass().getClassLoader().getResource("Frontend/SystemScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(layout);
+            String css = this.getClass().getClassLoader().getResource("Frontend/Style.css").toExternalForm();
+            scene.getStylesheets().add(css);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
