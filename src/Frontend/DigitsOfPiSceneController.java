@@ -18,6 +18,8 @@ import javafx.scene.image.ImageView;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
+
 import Backend.CSVWriter;
 
 
@@ -38,20 +40,6 @@ public class DigitsOfPiSceneController {
 
     }
 
-    /*public void TestDigitsOfPi(ActionEvent event){
-        String imagePath = "Frontend/Images/bubble.png";
-        String transparentPath = "Frontend/Images/transparent.png";
-        Image transparentImage = new Image(transparentPath);
-        Image image = new Image(imagePath);
-        bubble.setImage(image);
-        Integer load = (int) (slider.getValue());
-        test.run(load);
-        //System.out.println("Finished in " + test.getTime() + " s");
-        bubble.setImage(transparentImage);
-
-        scoreLabel.setText(test.getScore() + "");
-
-    }*/
     public void TestDigitsOfPi(ActionEvent event) {
         String imagePath = "Frontend/Images/bubble.png";
         String transparentPath = "Frontend/Images/transparent.png";
@@ -67,6 +55,12 @@ public class DigitsOfPiSceneController {
             protected Void call() throws Exception {
                 Integer load = (int) slider.getValue();
                 test.run(load);
+                if(load == 15000) {
+                    CSVWriter csvWriter = new CSVWriter();
+                    HashMap<String, Integer> infoHash = new HashMap<>();
+                    infoHash.put("Gauss-Legendre", test.getScore());
+                    csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
+                }
                 return null;
             }
         };

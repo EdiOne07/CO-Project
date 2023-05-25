@@ -1,5 +1,6 @@
 package Frontend;
 
+import Backend.CSVWriter;
 import Frontend.TestBenchmark.TestRandomHDD;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class RandomHDDController {
     @FXML
@@ -29,6 +31,8 @@ public class RandomHDDController {
     private Slider fileSize_slider;
     @FXML
     private Slider bufferSize_slider;
+    private Long fileSize;
+    private Integer bufferSize;
     public RandomHDDController() {
         test = new TestRandomHDD();
     }
@@ -58,8 +62,8 @@ public class RandomHDDController {
         Task<Void> task = new Task<>() {
             @Override
             protected Void call() throws Exception {
-                Long fileSize = (long) (fileSize_slider.getValue())*1024*1024;
-                Integer bufferSize = (int) (bufferSize_slider.getValue())*1024;
+                fileSize = (long) (fileSize_slider.getValue())*1024*1024;
+                bufferSize = (int) (bufferSize_slider.getValue())*1024;
                 test.initialize(fileSize);
                 test.run(bufferSize);
                 return null;
@@ -71,6 +75,12 @@ public class RandomHDDController {
             test.clean();
             String score = test.getResult();
             scoreLabel.setText(score + " " + "points");
+            if(fileSize == 256*1024*1024 && bufferSize == 1*1024) {
+                CSVWriter csvWriter = new CSVWriter();
+                HashMap<String, Integer> infoHash = new HashMap<>();
+                infoHash.put("Read/Write Memory Random", Integer.valueOf(test.getResult()));
+                csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
+            }
         });
 
         new Thread(task).start();

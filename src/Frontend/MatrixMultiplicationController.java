@@ -1,5 +1,6 @@
 package Frontend;
 
+import Backend.CSVWriter;
 import Frontend.TestBenchmark.TestMatrixMultiplication;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class MatrixMultiplicationController {
     private  TestMatrixMultiplication test;
@@ -44,6 +46,14 @@ public class MatrixMultiplicationController {
         Integer colB = (int) (slider112.getValue());
         test.run(rowA,colA,rowB,colB);
         scoreLabel.setText(test.getScore()+" "+"points");
+        //if(rowA == 2000 && colA == 2000 && colB == 2000)  {
+        if(rowA == 450 && colA == 450 && colB == 450)  {
+
+        CSVWriter csvWriter = new CSVWriter();
+            HashMap<String, Integer> infoHash = new HashMap<>();
+            infoHash.put("Matrix Multiplication", test.getScore());
+            csvWriter.writeHashMapToCSV(infoHash, "Test2.csv");
+        }
 
     }
     public void goBack(ActionEvent event) throws IOException {
