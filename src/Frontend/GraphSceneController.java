@@ -55,7 +55,10 @@ public class GraphSceneController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+
+        infoHash = csvWriter.readCSVToHashMap("Test2.csv");
+        System.out.println(infoHash);
+        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
                "Read/Write Memory Random", "Read/Write Memory" , "Gauss-Legendre","Monte Carlo", "Matrix Multiplication")));
         xAxis.setLabel("Tests");
         yAxis.setLabel("Score");
